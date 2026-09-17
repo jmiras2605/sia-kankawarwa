@@ -66,18 +66,18 @@ h2{
     font-weight:bold;
 }
 
-.menu button:hover{
-    background:#176b3a;
-    color:white;
-}
-
-input,select{
+input,select,textarea{
     width:100%;
     padding:13px;
     margin:6px 0 14px;
     border:1px solid #cbd5e1;
     border-radius:9px;
     font-size:16px;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
 }
 
 label{
@@ -126,6 +126,7 @@ footer{
 }
 
 @media(max-width:600px){
+
     .menu{
         grid-template-columns:1fr;
     }
@@ -140,23 +141,26 @@ footer{
 <body>
 
 <header>
+
 <h1>🏫 SIA Kankawarwa</h1>
+
 <p>Sistema de Información Académica</p>
+
 </header>
 
 <div class="container">
 
-<!-- INICIO -->
-
 <section id="inicio">
 
 <div class="card">
+
 <h2>Bienvenido al SIA Kankawarwa</h2>
 
 <p>
 Sistema de gestión académica de la Institución Educativa
 Indígena Kankawarwa.
 </p>
+
 </div>
 
 <div class="menu">
@@ -195,13 +199,13 @@ Indígena Kankawarwa.
 <h2>👨‍🎓 Estudiantes</h2>
 
 <label>Nombre</label>
-<input id="eNombre" type="text">
+<input id="eNombre">
 
 <label>Apellidos</label>
-<input id="eApellidos" type="text">
+<input id="eApellidos">
 
 <label>Identificación</label>
-<input id="eId" type="text">
+<input id="eId">
 
 <label>Grado</label>
 
@@ -224,13 +228,13 @@ Indígena Kankawarwa.
 </select>
 
 <label>Grupo</label>
-<input id="eGrupo" type="text">
+<input id="eGrupo">
 
 <button class="btn" onclick="guardarEstudiante()">
 💾 Guardar
 </button>
 
-<button class="btn-secondary btn" onclick="mostrar('inicio')">
+<button class="btn btn-secondary" onclick="mostrar('inicio')">
 ⬅ Volver
 </button>
 
@@ -261,29 +265,36 @@ onkeyup="listarEstudiantes()">
 <h2>👨‍🏫 Registro de docentes</h2>
 
 <label>Nombre</label>
-<input id="dNombre" type="text">
+<input id="dNombre">
 
 <label>Apellidos</label>
-<input id="dApellidos" type="text">
+<input id="dApellidos">
 
 <label>Identificación</label>
-<input id="dId" type="text">
+<input id="dId">
 
 <label>Área</label>
 
 <select id="dArea">
 
 <option value="">Seleccione el área</option>
+
 <option>Lengua Castellana</option>
 <option>Matemáticas</option>
 <option>Ciencias Naturales</option>
 <option>Ciencias Sociales</option>
 <option>Inglés</option>
 <option>Educación Física</option>
-<option>Artística</option>
+<option>Educación Artística</option>
 <option>Ética y Valores</option>
-<option>Tecnología</option>
-<option>Religión</option>
+<option>Tecnología e Informática</option>
+<option>Educación Religiosa</option>
+<option>Cátedra para la Paz</option>
+<option>Lengua Ikun</option>
+<option>Cultura y Tradición Arhuaca</option>
+<option>Territorio y Medio Ambiente</option>
+<option>Producción Agropecuaria</option>
+
 </select>
 
 <label>Grado asignado</label>
@@ -310,12 +321,11 @@ onkeyup="listarEstudiantes()">
 💾 Guardar docente
 </button>
 
-<button class="btn-secondary btn" onclick="mostrar('inicio')">
+<button class="btn btn-secondary" onclick="mostrar('inicio')">
 ⬅ Volver
 </button>
 
 </div>
-
 
 <div class="card">
 
@@ -324,7 +334,7 @@ onkeyup="listarEstudiantes()">
 <input
 id="buscarDocente"
 placeholder="Buscar docente, área o grado"
-onkeyup="listarDocentes">
+onkeyup="listarDocentes()">
 
 <div id="listaDocentes"></div>
 
@@ -333,7 +343,7 @@ onkeyup="listarDocentes">
 </section>
 
 
-<!-- PLANES -->
+<!-- PLANES DE AREA -->
 
 <section id="planes" class="hidden">
 
@@ -341,18 +351,118 @@ onkeyup="listarDocentes">
 
 <h2>📚 Planes de área</h2>
 
-<p>
-En este módulo podremos organizar los planes de área
-por grado, área, periodo y docente.
-</p>
+<label>Área</label>
 
-<br>
+<select id="pArea">
 
-<p>🚧 Módulo en construcción.</p>
+<option value="">Seleccione el área</option>
 
-<button class="btn" onclick="mostrar('inicio')">
+<option>Lengua Castellana</option>
+<option>Matemáticas</option>
+<option>Ciencias Naturales</option>
+<option>Ciencias Sociales</option>
+<option>Inglés</option>
+<option>Educación Física</option>
+<option>Educación Artística</option>
+<option>Ética y Valores</option>
+<option>Tecnología e Informática</option>
+<option>Educación Religiosa</option>
+<option>Cátedra para la Paz</option>
+<option>Lengua Ikun</option>
+<option>Cultura y Tradición Arhuaca</option>
+<option>Territorio y Medio Ambiente</option>
+<option>Producción Agropecuaria</option>
+
+</select>
+
+<label>Grado</label>
+
+<select id="pGrado">
+
+<option value="">Seleccione</option>
+<option>Preescolar</option>
+<option>1°</option>
+<option>2°</option>
+<option>3°</option>
+<option>4°</option>
+<option>5°</option>
+<option>6°</option>
+<option>7°</option>
+<option>8°</option>
+<option>9°</option>
+<option>10°</option>
+<option>11°</option>
+
+</select>
+
+<label>Período</label>
+
+<select id="pPeriodo">
+
+<option value="">Seleccione</option>
+<option>Primer período</option>
+<option>Segundo período</option>
+<option>Tercer período</option>
+<option>Cuarto período</option>
+
+</select>
+
+<label>Docente</label>
+
+<select id="pDocente">
+
+<option value="">Seleccione el docente</option>
+
+</select>
+
+<label>Contenidos</label>
+
+<textarea
+id="pContenidos"
+placeholder="Escriba los contenidos del área">
+</textarea>
+
+<label>Objetivos</label>
+
+<textarea
+id="pObjetivos"
+placeholder="Escriba los objetivos">
+</textarea>
+
+<label>Competencias</label>
+
+<textarea
+id="pCompetencias"
+placeholder="Escriba las competencias">
+</textarea>
+
+<label>Logros o desempeños</label>
+
+<textarea
+id="pLogros"
+placeholder="Escriba los logros o desempeños">
+</textarea>
+
+<button class="btn" onclick="guardarPlan()">
+💾 Guardar plan
+</button>
+
+<button class="btn btn-secondary" onclick="mostrar('inicio')">
 ⬅ Volver
 </button>
+
+</div>
+
+<div class="card">
+
+<h2>🔎 Consultar planes</h2>
+
+<input
+id="buscarPlan"
+placeholder="Buscar por área, grado, docente o período"
+onkeyup="listarPlanes()">
+
+<div id="listaPlanes"></div>
 
 </div>
 
@@ -368,8 +478,8 @@ por grado, área, periodo y docente.
 <h2>📊 Notas y logros</h2>
 
 <p>
-Aquí construiremos la carga de notas y logros mediante
-archivos Excel.
+Aquí construiremos el sistema para registrar notas,
+logros y posteriormente importar archivos Excel.
 </p>
 
 <br>
@@ -394,8 +504,8 @@ archivos Excel.
 <h2>🧾 Boletines</h2>
 
 <p>
-El sistema generará automáticamente los boletines a partir
-de estudiantes, notas, desempeños y logros.
+Aquí construiremos la generación automática de
+boletines por estudiante.
 </p>
 
 <br>
@@ -413,11 +523,15 @@ de estudiantes, notas, desempeños y logros.
 </div>
 
 <footer>
+
 SIA Kankawarwa © 2026
+
 </footer>
 
 
 <script>
+
+/* NAVEGACIÓN */
 
 function mostrar(id){
 
@@ -446,6 +560,11 @@ listarEstudiantes();
 
 if(id==="docentes"){
 listarDocentes();
+}
+
+if(id==="planes"){
+cargarDocentesPlan();
+listarPlanes();
 }
 
 window.scrollTo(0,0);
@@ -709,6 +828,202 @@ JSON.stringify(docentes)
 );
 
 listarDocentes();
+
+}
+
+
+/* PLANES DE AREA */
+
+function cargarDocentesPlan(){
+
+const select=document.getElementById("pDocente");
+
+let docentes=
+JSON.parse(localStorage.getItem("kankawarwa_docentes")) || [];
+
+select.innerHTML=
+'<option value="">Seleccione el docente</option>';
+
+docentes.forEach(function(d){
+
+const option=document.createElement("option");
+
+option.value=d.id;
+
+option.textContent=
+d.nombre+" "+d.apellidos+" - "+d.area;
+
+select.appendChild(option);
+
+});
+
+}
+
+
+function guardarPlan(){
+
+const area=document.getElementById("pArea").value;
+const grado=document.getElementById("pGrado").value;
+const periodo=document.getElementById("pPeriodo").value;
+const docenteId=document.getElementById("pDocente").value;
+
+const contenidos=
+document.getElementById("pContenidos").value.trim();
+
+const objetivos=
+document.getElementById("pObjetivos").value.trim();
+
+const competencias=
+document.getElementById("pCompetencias").value.trim();
+
+const logros=
+document.getElementById("pLogros").value.trim();
+
+if(
+!area ||
+!grado ||
+!periodo ||
+!docenteId ||
+!contenidos ||
+!objetivos ||
+!competencias ||
+!logros
+){
+
+alert("Complete todos los campos del plan de área.");
+
+return;
+
+}
+
+let docentes=
+JSON.parse(localStorage.getItem("kankawarwa_docentes")) || [];
+
+const docente=docentes.find(d=>d.id==docenteId);
+
+let planes=
+JSON.parse(localStorage.getItem("kankawarwa_planes")) || [];
+
+planes.push({
+
+id:Date.now(),
+
+area,
+grado,
+periodo,
+
+docenteId,
+
+docente:
+docente ?
+docente.nombre+" "+docente.apellidos
+: "",
+
+contenidos,
+objetivos,
+competencias,
+logros
+
+});
+
+localStorage.setItem(
+"kankawarwa_planes",
+JSON.stringify(planes)
+);
+
+alert("✅ Plan de área guardado.");
+
+document.getElementById("pArea").value="";
+document.getElementById("pGrado").value="";
+document.getElementById("pPeriodo").value="";
+document.getElementById("pDocente").value="";
+document.getElementById("pContenidos").value="";
+document.getElementById("pObjetivos").value="";
+document.getElementById("pCompetencias").value="";
+document.getElementById("pLogros").value="";
+
+listarPlanes();
+
+}
+
+
+function listarPlanes(){
+
+let planes=
+JSON.parse(localStorage.getItem("kankawarwa_planes")) || [];
+
+const buscar=
+(document.getElementById("buscarPlan")?.value || "")
+.toLowerCase();
+
+const lista=document.getElementById("listaPlanes");
+
+const resultados=planes.filter(p=>
+
+`${p.area} ${p.grado} ${p.periodo} ${p.docente} ${p.contenidos} ${p.objetivos} ${p.competencias} ${p.logros}`
+.toLowerCase()
+.includes(buscar)
+
+);
+
+if(resultados.length===0){
+
+lista.innerHTML="<p>No hay planes registrados.</p>";
+
+return;
+
+}
+
+lista.innerHTML=resultados.map(p=>`
+
+<div class="registro">
+
+<strong>${p.area}</strong>
+
+<p>🎓 Grado: ${p.grado}</p>
+
+<p>📅 ${p.periodo}</p>
+
+<p>👨‍🏫 ${p.docente}</p>
+
+<p><b>📖 Contenidos:</b><br>${p.contenidos}</p>
+
+<p><b>🎯 Objetivos:</b><br>${p.objetivos}</p>
+
+<p><b>🧠 Competencias:</b><br>${p.competencias}</p>
+
+<p><b>🏆 Logros:</b><br>${p.logros}</p>
+
+<button
+class="btn btn-danger"
+onclick="eliminarPlan(${p.id})">
+
+🗑️ Eliminar
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+function eliminarPlan(id){
+
+if(!confirm("¿Eliminar este plan de área?")) return;
+
+let planes=
+JSON.parse(localStorage.getItem("kankawarwa_planes")) || [];
+
+planes=planes.filter(p=>p.id!==id);
+
+localStorage.setItem(
+"kankawarwa_planes",
+JSON.stringify(planes)
+);
+
+listarPlanes();
 
 }
 
