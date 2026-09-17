@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SIA Kankawarwa</title>
 
 <style>
@@ -14,7 +15,7 @@
 }
 
 body{
-    background:#f1f5f3;
+    background:#f3f6f4;
     color:#1f2937;
 }
 
@@ -22,65 +23,58 @@ header{
     background:#176b3a;
     color:white;
     text-align:center;
-    padding:28px 15px;
+    padding:25px 15px;
 }
 
 header h1{
-    font-size:30px;
+    font-size:28px;
     margin-bottom:8px;
 }
 
-header p{
-    font-size:18px;
-}
-
 .container{
-    max-width:900px;
+    max-width:950px;
     margin:auto;
-    padding:20px;
+    padding:18px;
 }
 
 .card{
     background:white;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:20px;
+    padding:22px;
+    margin-bottom:18px;
+    border-radius:16px;
     box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.card h2{
+h2{
     color:#176b3a;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
-button{
-    border:0;
-    border-radius:10px;
-    padding:13px 18px;
-    cursor:pointer;
-    font-size:16px;
-    margin:5px;
+.menu{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
 }
 
-.btn{
+.menu button{
+    padding:25px 10px;
+    border:2px solid #176b3a;
+    border-radius:14px;
+    background:white;
+    color:#176b3a;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.menu button:hover{
     background:#176b3a;
-    color:white;
-}
-
-.btn-secondary{
-    background:#e5e7eb;
-    color:#222;
-}
-
-.btn-danger{
-    background:#c62828;
     color:white;
 }
 
 input,select{
     width:100%;
     padding:13px;
-    margin:7px 0 14px;
+    margin:6px 0 14px;
     border:1px solid #cbd5e1;
     border-radius:9px;
     font-size:16px;
@@ -90,45 +84,39 @@ label{
     font-weight:bold;
 }
 
-.menu{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.menu button{
-    background:white;
-    color:#176b3a;
-    border:2px solid #176b3a;
-    min-height:110px;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.menu button:hover{
+.btn{
     background:#176b3a;
     color:white;
+    border:0;
+    border-radius:9px;
+    padding:12px 18px;
+    font-size:15px;
+    margin:4px;
+}
+
+.btn-danger{
+    background:#c62828;
+}
+
+.btn-secondary{
+    background:#64748b;
 }
 
 .hidden{
     display:none;
 }
 
-.student{
+.registro{
     border:1px solid #ddd;
-    border-radius:12px;
     padding:15px;
     margin:10px 0;
+    border-radius:12px;
     background:#fafafa;
 }
 
-.student strong{
+.registro strong{
     color:#176b3a;
     font-size:18px;
-}
-
-.search{
-    margin-top:15px;
 }
 
 footer{
@@ -143,11 +131,7 @@ footer{
     }
 
     header h1{
-        font-size:25px;
-    }
-
-    .container{
-        padding:15px;
+        font-size:24px;
     }
 }
 </style>
@@ -156,21 +140,23 @@ footer{
 <body>
 
 <header>
-    <h1>🏫 SIA Kankawarwa</h1>
-    <p>Sistema de Información Académica</p>
+<h1>🏫 SIA Kankawarwa</h1>
+<p>Sistema de Información Académica</p>
 </header>
 
 <div class="container">
 
 <!-- INICIO -->
+
 <section id="inicio">
 
 <div class="card">
-    <h2>Bienvenido</h2>
-    <p>
-        Plataforma académica de la Institución Educativa Indígena
-        Kankawarwa.
-    </p>
+<h2>Bienvenido al SIA Kankawarwa</h2>
+
+<p>
+Sistema de gestión académica de la Institución Educativa
+Indígena Kankawarwa.
+</p>
 </div>
 
 <div class="menu">
@@ -180,7 +166,7 @@ footer{
 </button>
 
 <button onclick="mostrar('docentes')">
-👩‍🏫<br>Docentes
+👨‍🏫<br>Docentes
 </button>
 
 <button onclick="mostrar('planes')">
@@ -188,15 +174,11 @@ footer{
 </button>
 
 <button onclick="mostrar('notas')">
-📊<br>Notas
+📊<br>Notas y logros
 </button>
 
 <button onclick="mostrar('boletines')">
-📄<br>Boletines
-</button>
-
-<button onclick="mostrar('inicio')">
-🏠<br>Inicio
+🧾<br>Boletines
 </button>
 
 </div>
@@ -205,25 +187,27 @@ footer{
 
 
 <!-- ESTUDIANTES -->
+
 <section id="estudiantes" class="hidden">
 
 <div class="card">
 
-<h2>👨‍🎓 Registro de estudiantes</h2>
+<h2>👨‍🎓 Estudiantes</h2>
 
 <label>Nombre</label>
-<input id="nombre" type="text" placeholder="Ejemplo: Juan">
+<input id="eNombre" type="text">
 
 <label>Apellidos</label>
-<input id="apellidos" type="text" placeholder="Ejemplo: Pérez López">
+<input id="eApellidos" type="text">
 
 <label>Identificación</label>
-<input id="identificacion" type="text" placeholder="Número de identificación">
+<input id="eId" type="text">
 
 <label>Grado</label>
 
-<select id="grado">
-<option value="">Seleccione el grado</option>
+<select id="eGrado">
+
+<option value="">Seleccione</option>
 <option>Preescolar</option>
 <option>1°</option>
 <option>2°</option>
@@ -236,32 +220,30 @@ footer{
 <option>9°</option>
 <option>10°</option>
 <option>11°</option>
+
 </select>
 
 <label>Grupo</label>
-<input id="grupo" type="text" placeholder="Ejemplo: A">
+<input id="eGrupo" type="text">
 
 <button class="btn" onclick="guardarEstudiante()">
-💾 Guardar estudiante
+💾 Guardar
 </button>
 
-<button class="btn-secondary" onclick="mostrar('inicio')">
+<button class="btn-secondary btn" onclick="mostrar('inicio')">
 ⬅ Volver
 </button>
 
 </div>
 
-
 <div class="card">
 
-<h2>🔎 Consultar estudiantes</h2>
+<h2>🔎 Buscar estudiantes</h2>
 
 <input
-class="search"
-id="buscar"
-type="text"
-placeholder="Buscar por nombre, identificación o grado..."
-onkeyup="mostrarEstudiantes()">
+id="buscarEstudiante"
+placeholder="Nombre, identificación o grado"
+onkeyup="listarEstudiantes()">
 
 <div id="listaEstudiantes"></div>
 
@@ -271,23 +253,80 @@ onkeyup="mostrarEstudiantes()">
 
 
 <!-- DOCENTES -->
+
 <section id="docentes" class="hidden">
 
 <div class="card">
 
-<h2>👩‍🏫 Docentes</h2>
+<h2>👨‍🏫 Registro de docentes</h2>
 
-<p>
-Módulo para registrar y administrar los docentes de la institución.
-</p>
+<label>Nombre</label>
+<input id="dNombre" type="text">
 
-<br>
+<label>Apellidos</label>
+<input id="dApellidos" type="text">
 
-<p>🚧 Este módulo lo construiremos en el siguiente paso.</p>
+<label>Identificación</label>
+<input id="dId" type="text">
 
-<button class="btn" onclick="mostrar('inicio')">
+<label>Área</label>
+
+<select id="dArea">
+
+<option value="">Seleccione el área</option>
+<option>Lengua Castellana</option>
+<option>Matemáticas</option>
+<option>Ciencias Naturales</option>
+<option>Ciencias Sociales</option>
+<option>Inglés</option>
+<option>Educación Física</option>
+<option>Artística</option>
+<option>Ética y Valores</option>
+<option>Tecnología</option>
+<option>Religión</option>
+</select>
+
+<label>Grado asignado</label>
+
+<select id="dGrado">
+
+<option value="">Seleccione</option>
+<option>Preescolar</option>
+<option>1°</option>
+<option>2°</option>
+<option>3°</option>
+<option>4°</option>
+<option>5°</option>
+<option>6°</option>
+<option>7°</option>
+<option>8°</option>
+<option>9°</option>
+<option>10°</option>
+<option>11°</option>
+
+</select>
+
+<button class="btn" onclick="guardarDocente()">
+💾 Guardar docente
+</button>
+
+<button class="btn-secondary btn" onclick="mostrar('inicio')">
 ⬅ Volver
 </button>
+
+</div>
+
+
+<div class="card">
+
+<h2>🔎 Consultar docentes</h2>
+
+<input
+id="buscarDocente"
+placeholder="Buscar docente, área o grado"
+onkeyup="listarDocentes">
+
+<div id="listaDocentes"></div>
 
 </div>
 
@@ -295,6 +334,7 @@ Módulo para registrar y administrar los docentes de la institución.
 
 
 <!-- PLANES -->
+
 <section id="planes" class="hidden">
 
 <div class="card">
@@ -302,12 +342,13 @@ Módulo para registrar y administrar los docentes de la institución.
 <h2>📚 Planes de área</h2>
 
 <p>
-Aquí podremos guardar y consultar los planes de área de la institución.
+En este módulo podremos organizar los planes de área
+por grado, área, periodo y docente.
 </p>
 
 <br>
 
-<p>🚧 Próximamente construiremos este módulo.</p>
+<p>🚧 Módulo en construcción.</p>
 
 <button class="btn" onclick="mostrar('inicio')">
 ⬅ Volver
@@ -319,20 +360,21 @@ Aquí podremos guardar y consultar los planes de área de la institución.
 
 
 <!-- NOTAS -->
+
 <section id="notas" class="hidden">
 
 <div class="card">
 
-<h2>📊 Notas</h2>
+<h2>📊 Notas y logros</h2>
 
 <p>
-Sistema para registrar las calificaciones de los estudiantes por
-asignatura y período.
+Aquí construiremos la carga de notas y logros mediante
+archivos Excel.
 </p>
 
 <br>
 
-<p>🚧 Este será uno de los próximos módulos.</p>
+<p>🚧 Módulo en construcción.</p>
 
 <button class="btn" onclick="mostrar('inicio')">
 ⬅ Volver
@@ -344,15 +386,16 @@ asignatura y período.
 
 
 <!-- BOLETINES -->
+
 <section id="boletines" class="hidden">
 
 <div class="card">
 
-<h2>📄 Boletines</h2>
+<h2>🧾 Boletines</h2>
 
 <p>
-Aquí construiremos el sistema para generar automáticamente los
-boletines de los estudiantes.
+El sistema generará automáticamente los boletines a partir
+de estudiantes, notas, desempeños y logros.
 </p>
 
 <br>
@@ -369,7 +412,6 @@ boletines de los estudiantes.
 
 </div>
 
-
 <footer>
 SIA Kankawarwa © 2026
 </footer>
@@ -377,177 +419,297 @@ SIA Kankawarwa © 2026
 
 <script>
 
-function mostrar(seccion){
+function mostrar(id){
 
-    const secciones=[
-        "inicio",
-        "estudiantes",
-        "docentes",
-        "planes",
-        "notas",
-        "boletines"
-    ];
+const secciones=[
+"inicio",
+"estudiantes",
+"docentes",
+"planes",
+"notas",
+"boletines"
+];
 
-    secciones.forEach(function(id){
-        document.getElementById(id).classList.add("hidden");
-    });
+secciones.forEach(function(seccion){
 
-    document.getElementById(seccion).classList.remove("hidden");
+document.getElementById(seccion)
+.classList.add("hidden");
 
-    if(seccion==="estudiantes"){
-        mostrarEstudiantes();
-    }
+});
 
-    window.scrollTo(0,0);
+document.getElementById(id)
+.classList.remove("hidden");
+
+if(id==="estudiantes"){
+listarEstudiantes();
 }
 
+if(id==="docentes"){
+listarDocentes();
+}
+
+window.scrollTo(0,0);
+
+}
+
+
+/* ESTUDIANTES */
 
 function guardarEstudiante(){
 
-    const nombre=document.getElementById("nombre").value.trim();
-    const apellidos=document.getElementById("apellidos").value.trim();
-    const identificacion=document.getElementById("identificacion").value.trim();
-    const grado=document.getElementById("grado").value;
-    const grupo=document.getElementById("grupo").value.trim();
+const nombre=document.getElementById("eNombre").value.trim();
+const apellidos=document.getElementById("eApellidos").value.trim();
+const identificacion=document.getElementById("eId").value.trim();
+const grado=document.getElementById("eGrado").value;
+const grupo=document.getElementById("eGrupo").value.trim();
 
-    if(!nombre || !apellidos || !identificacion || !grado){
+if(!nombre || !apellidos || !identificacion || !grado){
 
-        alert("Por favor complete nombre, apellidos, identificación y grado.");
+alert("Complete los datos obligatorios.");
 
-        return;
-    }
+return;
 
-    let estudiantes=
-        JSON.parse(localStorage.getItem("estudiantesKankawarwa")) || [];
+}
 
-    const existe=estudiantes.some(
-        estudiante => estudiante.identificacion===identificacion
-    );
+let estudiantes=
+JSON.parse(localStorage.getItem("kankawarwa_estudiantes")) || [];
 
-    if(existe){
+if(estudiantes.some(e=>e.identificacion===identificacion)){
 
-        alert("Ya existe un estudiante con esa identificación.");
+alert("Ya existe un estudiante con esa identificación.");
 
-        return;
-    }
+return;
 
-    estudiantes.push({
+}
 
-        id:Date.now(),
+estudiantes.push({
 
-        nombre:nombre,
+id:Date.now(),
+nombre,
+apellidos,
+identificacion,
+grado,
+grupo
 
-        apellidos:apellidos,
+});
 
-        identificacion:identificacion,
+localStorage.setItem(
+"kankawarwa_estudiantes",
+JSON.stringify(estudiantes)
+);
 
-        grado:grado,
+alert("✅ Estudiante guardado.");
 
-        grupo:grupo
+document.getElementById("eNombre").value="";
+document.getElementById("eApellidos").value="";
+document.getElementById("eId").value="";
+document.getElementById("eGrado").value="";
+document.getElementById("eGrupo").value="";
 
-    });
+listarEstudiantes();
 
-    localStorage.setItem(
-        "estudiantesKankawarwa",
-        JSON.stringify(estudiantes)
-    );
-
-    alert("✅ Estudiante guardado correctamente.");
-
-    document.getElementById("nombre").value="";
-    document.getElementById("apellidos").value="";
-    document.getElementById("identificacion").value="";
-    document.getElementById("grado").value="";
-    document.getElementById("grupo").value="";
-
-    mostrarEstudiantes();
 }
 
 
-function mostrarEstudiantes(){
+function listarEstudiantes(){
 
-    let estudiantes=
-        JSON.parse(localStorage.getItem("estudiantesKankawarwa")) || [];
+let estudiantes=
+JSON.parse(localStorage.getItem("kankawarwa_estudiantes")) || [];
 
-    const busqueda=
-        document.getElementById("buscar").value.toLowerCase();
+const buscar=
+(document.getElementById("buscarEstudiante")?.value || "")
+.toLowerCase();
 
-    const lista=document.getElementById("listaEstudiantes");
+const lista=document.getElementById("listaEstudiantes");
 
-    const filtrados=estudiantes.filter(estudiante => {
+const resultados=estudiantes.filter(e=>
 
-        const texto=`
+`${e.nombre} ${e.apellidos} ${e.identificacion} ${e.grado} ${e.grupo}`
+.toLowerCase()
+.includes(buscar)
 
-            ${estudiante.nombre}
-            ${estudiante.apellidos}
-            ${estudiante.identificacion}
-            ${estudiante.grado}
-            ${estudiante.grupo}
+);
 
-        `.toLowerCase();
+if(resultados.length===0){
 
-        return texto.includes(busqueda);
+lista.innerHTML="<p>No hay estudiantes registrados.</p>";
 
-    });
+return;
 
+}
 
-    if(filtrados.length===0){
+lista.innerHTML=resultados.map(e=>`
 
-        lista.innerHTML="<p>No hay estudiantes registrados.</p>";
+<div class="registro">
 
-        return;
-    }
+<strong>${e.nombre} ${e.apellidos}</strong>
 
+<p>🪪 ${e.identificacion}</p>
 
-    lista.innerHTML=filtrados.map(estudiante => `
+<p>🎓 ${e.grado} ${e.grupo ? " - "+e.grupo : ""}</p>
 
-        <div class="student">
+<button
+class="btn btn-danger"
+onclick="eliminarEstudiante(${e.id})">
 
-            <strong>
-            ${estudiante.nombre} ${estudiante.apellidos}
-            </strong>
+🗑️ Eliminar
 
-            <p>🪪 Identificación:
-            ${estudiante.identificacion}</p>
+</button>
 
-            <p>🎓 Grado:
-            ${estudiante.grado}
-            ${estudiante.grupo ? "- Grupo "+estudiante.grupo : ""}
-            </p>
+</div>
 
-            <button
-            class="btn-danger"
-            onclick="eliminarEstudiante(${estudiante.id})">
-
-            🗑️ Eliminar
-
-            </button>
-
-        </div>
-
-    `).join("");
+`).join("");
 
 }
 
 
 function eliminarEstudiante(id){
 
-    if(!confirm("¿Desea eliminar este estudiante?")){
-        return;
-    }
+if(!confirm("¿Eliminar este estudiante?")) return;
 
-    let estudiantes=
-        JSON.parse(localStorage.getItem("estudiantesKankawarwa")) || [];
+let estudiantes=
+JSON.parse(localStorage.getItem("kankawarwa_estudiantes")) || [];
 
-    estudiantes=
-        estudiantes.filter(estudiante => estudiante.id!==id);
+estudiantes=estudiantes.filter(e=>e.id!==id);
 
-    localStorage.setItem(
-        "estudiantesKankawarwa",
-        JSON.stringify(estudiantes)
-    );
+localStorage.setItem(
+"kankawarwa_estudiantes",
+JSON.stringify(estudiantes)
+);
 
-    mostrarEstudiantes();
+listarEstudiantes();
+
+}
+
+
+/* DOCENTES */
+
+function guardarDocente(){
+
+const nombre=document.getElementById("dNombre").value.trim();
+const apellidos=document.getElementById("dApellidos").value.trim();
+const identificacion=document.getElementById("dId").value.trim();
+const area=document.getElementById("dArea").value;
+const grado=document.getElementById("dGrado").value;
+
+if(!nombre || !apellidos || !identificacion || !area || !grado){
+
+alert("Complete todos los datos.");
+
+return;
+
+}
+
+let docentes=
+JSON.parse(localStorage.getItem("kankawarwa_docentes")) || [];
+
+if(docentes.some(d=>d.identificacion===identificacion)){
+
+alert("Ya existe un docente con esa identificación.");
+
+return;
+
+}
+
+docentes.push({
+
+id:Date.now(),
+nombre,
+apellidos,
+identificacion,
+area,
+grado
+
+});
+
+localStorage.setItem(
+"kankawarwa_docentes",
+JSON.stringify(docentes)
+);
+
+alert("✅ Docente guardado.");
+
+document.getElementById("dNombre").value="";
+document.getElementById("dApellidos").value="";
+document.getElementById("dId").value="";
+document.getElementById("dArea").value="";
+document.getElementById("dGrado").value="";
+
+listarDocentes();
+
+}
+
+
+function listarDocentes(){
+
+let docentes=
+JSON.parse(localStorage.getItem("kankawarwa_docentes")) || [];
+
+const buscar=
+(document.getElementById("buscarDocente")?.value || "")
+.toLowerCase();
+
+const lista=document.getElementById("listaDocentes");
+
+const resultados=docentes.filter(d=>
+
+`${d.nombre} ${d.apellidos} ${d.identificacion} ${d.area} ${d.grado}`
+.toLowerCase()
+.includes(buscar)
+
+);
+
+if(resultados.length===0){
+
+lista.innerHTML="<p>No hay docentes registrados.</p>";
+
+return;
+
+}
+
+lista.innerHTML=resultados.map(d=>`
+
+<div class="registro">
+
+<strong>${d.nombre} ${d.apellidos}</strong>
+
+<p>🪪 ${d.identificacion}</p>
+
+<p>📚 ${d.area}</p>
+
+<p>🎓 Grado: ${d.grado}</p>
+
+<button
+class="btn btn-danger"
+onclick="eliminarDocente(${d.id})">
+
+🗑️ Eliminar
+
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+
+function eliminarDocente(id){
+
+if(!confirm("¿Eliminar este docente?")) return;
+
+let docentes=
+JSON.parse(localStorage.getItem("kankawarwa_docentes")) || [];
+
+docentes=docentes.filter(d=>d.id!==id);
+
+localStorage.setItem(
+"kankawarwa_docentes",
+JSON.stringify(docentes)
+);
+
+listarDocentes();
+
 }
 
 </script>
