@@ -6,1662 +6,1246 @@
 
 <title>SIA Kankawarwa</title>
 
-<style>
+<!-- Lector de archivos Word -->
+<script src="https://unpkg.com/mammoth@1.8.0/mammoth.browser.min.js"></script>
 
+<style>
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#f3f6f4;
-    color:#1f2937;
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f2f5f7;
+    color:#222;
 }
 
 header{
-    background:#176b3a;
+    background:#174d3c;
     color:white;
+    padding:20px;
     text-align:center;
-    padding:25px 15px;
 }
 
 header h1{
+    margin:0;
     font-size:28px;
-    margin-bottom:8px;
+}
+
+header p{
+    margin:8px 0 0;
 }
 
 .container{
-    max-width:950px;
-    margin:auto;
-    padding:18px;
-}
-
-.card{
-    background:white;
-    padding:22px;
-    margin-bottom:18px;
-    border-radius:16px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
-
-h2{
-    color:#176b3a;
-    margin-bottom:15px;
+    width:95%;
+    max-width:1100px;
+    margin:20px auto;
 }
 
 .menu{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:12px;
+    margin-bottom:20px;
 }
 
 .menu button{
-    padding:25px 10px;
-    border:2px solid #176b3a;
-    border-radius:14px;
+    border:0;
+    padding:16px 10px;
+    border-radius:10px;
     background:white;
-    color:#176b3a;
-    font-size:18px;
-    font-weight:bold;
+    box-shadow:0 2px 7px #bbb;
     cursor:pointer;
+    font-size:15px;
 }
 
 .menu button:hover{
-    background:#176b3a;
-    color:white;
+    background:#e7f2ed;
 }
 
-input,
-select,
-textarea{
-    width:100%;
-    padding:13px;
-    margin:6px 0 14px;
-    border:1px solid #cbd5e1;
-    border-radius:9px;
-    font-size:16px;
+.seccion{
+    display:none;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px #ccc;
+    margin-bottom:20px;
 }
 
-textarea{
-    min-height:110px;
-    resize:vertical;
-}
-
-label{
-    font-weight:bold;
+.seccion.activa{
     display:block;
-    margin-top:5px;
+}
+
+h2{
+    color:#174d3c;
+    margin-top:0;
+}
+
+input,select,textarea{
+    width:100%;
+    padding:11px;
+    margin:6px 0 12px;
+    border:1px solid #bbb;
+    border-radius:7px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:80px;
 }
 
 .btn{
-    background:#176b3a;
+    background:#174d3c;
     color:white;
     border:0;
-    border-radius:9px;
     padding:12px 18px;
-    font-size:15px;
-    margin:4px;
+    border-radius:7px;
     cursor:pointer;
+    margin:4px;
 }
 
-.btn-danger{
-    background:#c62828;
+.btn:hover{
+    opacity:.9;
 }
 
-.btn-secondary{
-    background:#64748b;
+.btn-rojo{
+    background:#a83232;
 }
 
-.btn-blue{
-    background:#1565c0;
+.btn-azul{
+    background:#245a9c;
 }
 
-.hidden{
-    display:none;
+.btn-verde{
+    background:#24734b;
 }
 
-.registro{
-    border:1px solid #ddd;
+.card{
+    background:#f7f9fa;
     padding:15px;
     margin:10px 0;
-    border-radius:12px;
-    background:#fafafa;
-}
-
-.registro strong{
-    color:#176b3a;
-    font-size:18px;
-}
-
-.pdf-box{
-    margin-top:12px;
-    padding:12px;
-    border:1px dashed #176b3a;
-    border-radius:10px;
-    background:#f7faf8;
-}
-
-.info{
-    background:#eef7f1;
-    border-left:5px solid #176b3a;
-    padding:12px;
-    margin-bottom:15px;
     border-radius:8px;
+    border-left:5px solid #174d3c;
 }
 
-footer{
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:15px;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ccc;
+    padding:9px;
+    text-align:left;
+    font-size:14px;
+}
+
+th{
+    background:#174d3c;
+    color:white;
+}
+
+.mensaje{
+    padding:12px;
+    background:#eaf5ee;
+    border-radius:7px;
+    margin:10px 0;
+}
+
+.ayuda{
+    background:#fff8df;
+    border-left:5px solid #d4a72c;
+    padding:15px;
+    margin:12px 0;
+    border-radius:5px;
+}
+
+.boletin{
+    background:white;
+    border:1px solid #aaa;
+    padding:30px;
+    margin:20px 0;
+    max-width:850px;
+}
+
+.boletin-header{
     text-align:center;
-    padding:25px;
-    color:#64748b;
+    border-bottom:2px solid #174d3c;
+    padding-bottom:15px;
+    margin-bottom:20px;
+}
+
+.boletin-header h1{
+    margin:5px;
+    color:#174d3c;
+}
+
+.boletin-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.nota{
+    text-align:center;
+    font-weight:bold;
+}
+
+.superior{
+    font-weight:bold;
 }
 
 @media(max-width:600px){
 
-    .menu{
+    header h1{
+        font-size:22px;
+    }
+
+    .container{
+        width:97%;
+    }
+
+    .seccion{
+        padding:14px;
+    }
+
+    table{
+        font-size:12px;
+    }
+
+    th,td{
+        padding:6px;
+    }
+
+    .boletin{
+        padding:15px;
+    }
+
+    .boletin-info{
         grid-template-columns:1fr;
     }
-
-    header h1{
-        font-size:24px;
-    }
-
-    .btn{
-        width:100%;
-        margin:5px 0;
-    }
-
 }
 
+@media print{
+
+    body{
+        background:white;
+    }
+
+    header,
+    .menu,
+    .no-print{
+        display:none !important;
+    }
+
+    .container{
+        width:100%;
+        margin:0;
+    }
+
+    .seccion{
+        display:block !important;
+        box-shadow:none;
+        padding:0;
+    }
+
+    .boletin{
+        border:0;
+        page-break-after:always;
+        max-width:none;
+    }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<h1>🏫 SIA Kankawarwa</h1>
-
-<p>Sistema de Información Académica</p>
-
+    <h1>📚 SIA KANKAWARWA</h1>
+    <p>Sistema Integrado Académico</p>
 </header>
-
 
 <div class="container">
 
+<!-- MENÚ -->
 
-<!-- ================= INICIO ================= -->
+<div class="menu">
 
-<section id="inicio">
+<button onclick="mostrar('inicio')">
+🏠 Inicio
+</button>
 
-<div class="card">
+<button onclick="mostrar('estudiantes')">
+👨‍🎓 Estudiantes
+</button>
 
-<h2>Bienvenido al SIA Kankawarwa</h2>
+<button onclick="mostrar('docentes')">
+👨‍🏫 Docentes
+</button>
 
-<p>
-Sistema de gestión académica de la
-Institución Educativa Indígena Kankawarwa.
-</p>
+<button onclick="mostrar('planes')">
+📚 Planes de Área
+</button>
+
+<button onclick="mostrar('word')">
+📄 Subir Word
+</button>
+
+<button onclick="mostrar('boletines')">
+🧾 Boletines
+</button>
 
 </div>
 
 
-<div class="menu">
+<!-- INICIO -->
 
-<button onclick="mostrar('estudiantes')">
-👨‍🎓<br>
-Estudiantes
-</button>
+<section id="inicio" class="seccion activa">
 
-<button onclick="mostrar('docentes')">
-👨‍🏫<br>
-Docentes
-</button>
+<h2>Bienvenido a SIA Kankawarwa</h2>
 
-<button onclick="mostrar('planes')">
-📚<br>
-Planes de área
-</button>
+<div class="card">
+<h3>📄 Sistema automático de boletines</h3>
 
-<button onclick="mostrar('notas')">
-📊<br>
-Notas y logros
-</button>
+<p>
+El docente puede diligenciar una plantilla Word con las notas,
+logros y observaciones de los estudiantes y luego subirla a la
+plataforma.
+</p>
 
-<button onclick="mostrar('boletines')">
-🧾<br>
-Boletines
-</button>
+<p>
+SIA Kankawarwa organizará automáticamente la información y
+preparará los boletines.
+</p>
+</div>
 
+<div class="card">
+<strong>Proceso:</strong>
+
+<p>
+1️⃣ Descargar plantilla Word
+</p>
+
+<p>
+2️⃣ Llenar la información
+</p>
+
+<p>
+3️⃣ Subir el Word
+</p>
+
+<p>
+4️⃣ Procesar información
+</p>
+
+<p>
+5️⃣ Seleccionar estudiante
+</p>
+
+<p>
+6️⃣ Generar boletín
+</p>
 </div>
 
 </section>
 
 
+<!-- ESTUDIANTES -->
 
-<!-- ================= ESTUDIANTES ================= -->
-
-<section id="estudiantes" class="hidden">
-
-<div class="card">
+<section id="estudiantes" class="seccion">
 
 <h2>👨‍🎓 Registro de estudiantes</h2>
 
-<label>Nombre</label>
-<input id="eNombre" type="text">
+<input id="nombreEstudiante"
+placeholder="Nombre">
 
-<label>Apellidos</label>
-<input id="eApellidos" type="text">
+<input id="apellidoEstudiante"
+placeholder="Apellidos">
 
-<label>Identificación</label>
-<input id="eId" type="text">
+<input id="documentoEstudiante"
+placeholder="Documento">
 
-<label>Grado</label>
+<input id="gradoEstudiante"
+placeholder="Grado">
 
-<select id="eGrado">
-
-<option value="">Seleccione</option>
-
-<option>Preescolar</option>
-<option>1°</option>
-<option>2°</option>
-<option>3°</option>
-<option>4°</option>
-<option>5°</option>
-<option>6°</option>
-<option>7°</option>
-<option>8°</option>
-<option>9°</option>
-<option>10°</option>
-<option>11°</option>
-
-</select>
-
-<label>Grupo</label>
-
-<input id="eGrupo" type="text">
-
+<input id="grupoEstudiante"
+placeholder="Grupo">
 
 <button class="btn" onclick="guardarEstudiante()">
-💾 Guardar estudiante
+Guardar estudiante
 </button>
-
-<button class="btn btn-secondary" onclick="mostrar('inicio')">
-⬅ Volver
-</button>
-
-</div>
-
-
-<div class="card">
-
-<h2>🔎 Buscar estudiantes</h2>
 
 <input
 id="buscarEstudiante"
-placeholder="Nombre, identificación, grado o grupo"
+placeholder="🔎 Buscar estudiante..."
 onkeyup="listarEstudiantes()">
 
 <div id="listaEstudiantes"></div>
 
-</div>
-
 </section>
 
 
+<!-- DOCENTES -->
 
-<!-- ================= DOCENTES ================= -->
-
-<section id="docentes" class="hidden">
-
-<div class="card">
+<section id="docentes" class="seccion">
 
 <h2>👨‍🏫 Registro de docentes</h2>
 
-<label>Nombre</label>
+<input id="nombreDocente"
+placeholder="Nombre completo">
 
-<input id="dNombre" type="text">
+<input id="documentoDocente"
+placeholder="Documento">
 
-
-<label>Apellidos</label>
-
-<input id="dApellidos" type="text">
-
-
-<label>Identificación</label>
-
-<input id="dId" type="text">
-
-
-<label>Área</label>
-
-<select id="dArea">
-
-<option value="">Seleccione el área</option>
-
-<option>Lengua Castellana</option>
-<option>Matemáticas</option>
-<option>Ciencias Naturales</option>
-<option>Ciencias Sociales</option>
-<option>Inglés</option>
-<option>Educación Física</option>
-<option>Educación Artística</option>
-<option>Ética y Valores</option>
-<option>Tecnología e Informática</option>
-<option>Educación Religiosa</option>
-
-<option>Cátedra para la Paz</option>
-
-<option>Lengua Ikun</option>
-
-<option>Cultura y Tradición Arhuaca</option>
-
-<option>Territorio y Medio Ambiente</option>
-
-<option>Producción Agropecuaria</option>
-
-</select>
-
-
-<label>Grado asignado</label>
-
-<select id="dGrado">
-
-<option value="">Seleccione</option>
-
-<option>Preescolar</option>
-<option>1°</option>
-<option>2°</option>
-<option>3°</option>
-<option>4°</option>
-<option>5°</option>
-<option>6°</option>
-<option>7°</option>
-<option>8°</option>
-<option>9°</option>
-<option>10°</option>
-<option>11°</option>
-
-</select>
-
+<input id="areaDocente"
+placeholder="Área que orienta">
 
 <button class="btn" onclick="guardarDocente()">
-💾 Guardar docente
+Guardar docente
 </button>
-
-<button class="btn btn-secondary" onclick="mostrar('inicio')">
-⬅ Volver
-</button>
-
-</div>
-
-
-<div class="card">
-
-<h2>🔎 Consultar docentes</h2>
 
 <input
 id="buscarDocente"
-placeholder="Buscar docente, área o grado"
+placeholder="🔎 Buscar docente..."
 onkeyup="listarDocentes()">
 
 <div id="listaDocentes"></div>
 
-</div>
-
 </section>
 
 
+<!-- PLANES -->
 
-<!-- ================= PLANES DE AREA ================= -->
+<section id="planes" class="seccion">
 
-<section id="planes" class="hidden">
-
-
-<div class="card">
-
-<h2>📚 Planes de área</h2>
-
-
-<div class="info">
-
-<b>📄 Cargar plan de área en PDF</b>
-
-<br><br>
-
-El documento puede contener toda la información del
-plan: portada, objetivos, contenidos, competencias,
-metodología, evaluación, logros y demás información.
-
-</div>
-
+<h2>📚 Planes de Área</h2>
 
 <label>Área</label>
 
-<select id="pArea">
-
-<option value="">Seleccione el área</option>
+<select id="areaPlan">
 
 <option>Lengua Castellana</option>
-
 <option>Matemáticas</option>
-
 <option>Ciencias Naturales</option>
-
 <option>Ciencias Sociales</option>
-
 <option>Inglés</option>
-
 <option>Educación Física</option>
-
 <option>Educación Artística</option>
-
 <option>Ética y Valores</option>
-
 <option>Tecnología e Informática</option>
-
 <option>Educación Religiosa</option>
-
 <option>Cátedra para la Paz</option>
-
 <option>Lengua Ikun</option>
-
 <option>Cultura y Tradición Arhuaca</option>
-
 <option>Territorio y Medio Ambiente</option>
-
 <option>Producción Agropecuaria</option>
 
 </select>
 
+<input id="gradoPlan" placeholder="Grado">
 
-<label>Grado</label>
+<input id="periodoPlan" placeholder="Periodo">
 
-<select id="pGrado">
+<input id="nombrePlan" placeholder="Nombre del plan">
 
-<option value="">Seleccione</option>
+<input type="file" id="pdfPlan" accept=".pdf">
 
-<option>Preescolar</option>
-<option>1°</option>
-<option>2°</option>
-<option>3°</option>
-<option>4°</option>
-<option>5°</option>
-<option>6°</option>
-<option>7°</option>
-<option>8°</option>
-<option>9°</option>
-<option>10°</option>
-<option>11°</option>
-
-</select>
-
-
-<label>Período</label>
-
-<select id="pPeriodo">
-
-<option value="">Seleccione</option>
-
-<option>Primer período</option>
-<option>Segundo período</option>
-<option>Tercer período</option>
-<option>Cuarto período</option>
-
-</select>
-
-
-<label>Docente responsable</label>
-
-<select id="pDocente">
-
-<option value="">Seleccione el docente</option>
-
-</select>
-
-
-<label>Nombre del plan</label>
-
-<input
-id="pNombre"
-type="text"
-placeholder="Ejemplo: Plan de área de Lengua Ikun">
-
-
-<label>📄 Seleccionar archivo PDF</label>
-
-<input
-id="pPdf"
-type="file"
-accept=".pdf,application/pdf">
-
-
-<div class="pdf-box">
-
-<p id="nombrePdf">
-
-No se ha seleccionado ningún PDF.
-
-</p>
-
-<p>
-
-<strong>Tamaño máximo: 5 MB</strong>
-
-</p>
-
-</div>
-
-
-<button class="btn" onclick="guardarPlanPDF()">
-
-💾 Guardar plan de área
-
+<button class="btn" onclick="guardarPlan()">
+Guardar Plan PDF
 </button>
-
-
-<button
-class="btn btn-secondary"
-onclick="mostrar('inicio')">
-
-⬅ Volver
-
-</button>
-
-</div>
-
-
-
-<div class="card">
-
-<h2>🔎 Consultar planes de área</h2>
-
-<input
-id="buscarPlan"
-placeholder="Buscar por área, grado, docente o nombre"
-onkeyup="listarPlanesPDF()">
 
 <div id="listaPlanes"></div>
 
-</div>
-
-
 </section>
 
 
+<!-- WORD -->
 
-<!-- ================= NOTAS ================= -->
+<section id="word" class="seccion">
 
-<section id="notas" class="hidden">
+<h2>📄 Cargar Word para generar boletines</h2>
 
-<div class="card">
+<div class="ayuda">
 
-<h2>📊 Notas y logros</h2>
+<strong>¿Cómo funciona?</strong>
 
 <p>
-
-Aquí construiremos el sistema para registrar
-notas, logros y desempeños de los estudiantes.
-
+Primero descarga la plantilla Word.
+Después coloca los datos de los estudiantes,
+notas, logros y observaciones.
+Finalmente vuelve a subir el Word.
 </p>
 
-<br>
+</div>
 
-<p>🚧 Módulo en construcción.</p>
-
-<br>
-
-<button class="btn" onclick="mostrar('inicio')">
-
-⬅ Volver
-
+<button class="btn btn-azul" onclick="descargarPlantilla()">
+⬇️ Descargar plantilla Word
 </button>
 
-</div>
+<hr>
+
+<h3>📤 Subir Word diligenciado</h3>
+
+<input
+type="file"
+id="archivoWord"
+accept=".docx">
+
+<button class="btn btn-verde" onclick="procesarWord()">
+🔎 Procesar Word
+</button>
+
+<div id="resultadoWord"></div>
 
 </section>
 
 
+<!-- BOLETINES -->
 
-<!-- ================= BOLETINES ================= -->
+<section id="boletines" class="seccion">
 
-<section id="boletines" class="hidden">
+<h2>🧾 Generación automática de boletines</h2>
 
-<div class="card">
+<div id="selectorBoletin"></div>
 
-<h2>🧾 Boletines</h2>
-
-<p>
-
-Aquí construiremos la generación automática
-de boletines académicos.
-
-</p>
-
-<br>
-
-<p>🚧 Módulo en construcción.</p>
-
-<br>
-
-<button class="btn" onclick="mostrar('inicio')">
-
-⬅ Volver
-
-</button>
-
-</div>
+<div id="boletinGenerado"></div>
 
 </section>
 
-
 </div>
-
-
-<footer>
-
-SIA Kankawarwa © 2026
-
-</footer>
-
 
 
 <script>
 
+/* ===========================
+   DATOS
+=========================== */
 
-/* ==================================================
+const AREAS = [
+"Lengua Castellana",
+"Matemáticas",
+"Ciencias Naturales",
+"Ciencias Sociales",
+"Inglés",
+"Educación Física",
+"Educación Artística",
+"Ética y Valores",
+"Tecnología e Informática",
+"Educación Religiosa",
+"Cátedra para la Paz",
+"Lengua Ikun",
+"Cultura y Tradición Arhuaca",
+"Territorio y Medio Ambiente",
+"Producción Agropecuaria"
+];
+
+
+/* ===========================
    NAVEGACIÓN
-================================================== */
+=========================== */
 
 function mostrar(id){
 
-const secciones=[
-"inicio",
-"estudiantes",
-"docentes",
-"planes",
-"notas",
-"boletines"
-];
+    document.querySelectorAll(".seccion")
+    .forEach(s => s.classList.remove("activa"));
 
-secciones.forEach(function(seccion){
+    document.getElementById(id)
+    .classList.add("activa");
 
-document
-.getElementById(seccion)
-.classList.add("hidden");
+    if(id==="estudiantes"){
+        listarEstudiantes();
+    }
 
-});
+    if(id==="docentes"){
+        listarDocentes();
+    }
 
+    if(id==="planes"){
+        listarPlanes();
+    }
 
-document
-.getElementById(id)
-.classList.remove("hidden");
-
-
-if(id==="estudiantes"){
-
-listarEstudiantes();
-
+    if(id==="boletines"){
+        cargarSelectorBoletin();
+    }
 }
 
 
-if(id==="docentes"){
-
-listarDocentes();
-
-}
-
-
-if(id==="planes"){
-
-cargarDocentesPlan();
-
-listarPlanesPDF();
-
-}
-
-
-window.scrollTo(0,0);
-
-}
-
-
-
-/* ==================================================
+/* ===========================
    ESTUDIANTES
-================================================== */
+=========================== */
+
+function obtenerEstudiantes(){
+
+    let datos =
+        localStorage.getItem("kankawarwa_estudiantes");
+
+    if(!datos){
+
+        let antiguos =
+            localStorage.getItem("estudiantesKankawarwa");
+
+        if(antiguos){
+
+            localStorage.setItem(
+                "kankawarwa_estudiantes",
+                antiguos
+            );
+
+            datos = antiguos;
+        }
+    }
+
+    return datos ? JSON.parse(datos) : [];
+}
+
 
 function guardarEstudiante(){
 
-const nombre=
-document.getElementById("eNombre").value.trim();
+    let estudiantes = obtenerEstudiantes();
 
-const apellidos=
-document.getElementById("eApellidos").value.trim();
+    let estudiante = {
 
-const identificacion=
-document.getElementById("eId").value.trim();
+        id:Date.now(),
 
-const grado=
-document.getElementById("eGrado").value;
+        nombre:
+        document.getElementById("nombreEstudiante").value.trim(),
 
-const grupo=
-document.getElementById("eGrupo").value.trim();
+        apellido:
+        document.getElementById("apellidoEstudiante").value.trim(),
 
+        documento:
+        document.getElementById("documentoEstudiante").value.trim(),
 
-if(
-!nombre ||
-!apellidos ||
-!identificacion ||
-!grado
-){
+        grado:
+        document.getElementById("gradoEstudiante").value.trim(),
 
-alert("Complete los datos obligatorios.");
+        grupo:
+        document.getElementById("grupoEstudiante").value.trim()
 
-return;
+    };
 
+    if(!estudiante.nombre || !estudiante.apellido){
+
+        alert("Escriba el nombre y apellido del estudiante.");
+
+        return;
+    }
+
+    estudiantes.push(estudiante);
+
+    localStorage.setItem(
+        "kankawarwa_estudiantes",
+        JSON.stringify(estudiantes)
+    );
+
+    document.getElementById("nombreEstudiante").value="";
+    document.getElementById("apellidoEstudiante").value="";
+    document.getElementById("documentoEstudiante").value="";
+    document.getElementById("gradoEstudiante").value="";
+    document.getElementById("grupoEstudiante").value="";
+
+    listarEstudiantes();
+
+    alert("Estudiante guardado correctamente.");
 }
-
-
-let estudiantes=
-JSON.parse(
-localStorage.getItem("kankawarwa_estudiantes")
-) || [];
-
-
-if(
-estudiantes.some(
-e=>e.identificacion===identificacion
-)
-){
-
-alert(
-"Ya existe un estudiante con esa identificación."
-);
-
-return;
-
-}
-
-
-estudiantes.push({
-
-id:Date.now(),
-
-nombre:nombre,
-
-apellidos:apellidos,
-
-identificacion:identificacion,
-
-grado:grado,
-
-grupo:grupo
-
-});
-
-
-localStorage.setItem(
-
-"kankawarwa_estudiantes",
-
-JSON.stringify(estudiantes)
-
-);
-
-
-alert("✅ Estudiante guardado.");
-
-
-document.getElementById("eNombre").value="";
-
-document.getElementById("eApellidos").value="";
-
-document.getElementById("eId").value="";
-
-document.getElementById("eGrado").value="";
-
-document.getElementById("eGrupo").value="";
-
-
-listarEstudiantes();
-
-}
-
 
 
 function listarEstudiantes(){
 
-let estudiantes=
-JSON.parse(
-localStorage.getItem("kankawarwa_estudiantes")
-) || [];
+    let estudiantes = obtenerEstudiantes();
 
+    let buscar =
+        document.getElementById("buscarEstudiante")
+        ?.value.toLowerCase() || "";
 
-const buscar=
-(
-document.getElementById("buscarEstudiante")?.value
-|| ""
-).toLowerCase();
+    let lista = estudiantes.filter(e =>
+        `${e.nombre} ${e.apellido}`
+        .toLowerCase()
+        .includes(buscar)
+    );
 
+    let html="";
 
-const lista=
-document.getElementById("listaEstudiantes");
+    if(lista.length===0){
 
+        html="<p>No hay estudiantes registrados.</p>";
 
-const resultados=
-estudiantes.filter(e=>
+    }else{
 
-`${e.nombre}
-${e.apellidos}
-${e.identificacion}
-${e.grado}
-${e.grupo}`
-.toLowerCase()
-.includes(buscar)
+        html += "<table>";
 
-);
+        html += `
+        <tr>
+        <th>Nombre</th>
+        <th>Documento</th>
+        <th>Grado</th>
+        <th>Grupo</th>
+        <th>Acción</th>
+        </tr>
+        `;
 
+        lista.forEach(e=>{
 
-if(resultados.length===0){
+            html += `
+            <tr>
 
-lista.innerHTML=
-"<p>No hay estudiantes registrados.</p>";
+            <td>
+            ${e.nombre} ${e.apellido}
+            </td>
 
-return;
+            <td>
+            ${e.documento || ""}
+            </td>
 
+            <td>
+            ${e.grado || ""}
+            </td>
+
+            <td>
+            ${e.grupo || ""}
+            </td>
+
+            <td>
+
+            <button
+            class="btn btn-rojo"
+            onclick="eliminarEstudiante(${e.id})">
+
+            Eliminar
+
+            </button>
+
+            </td>
+
+            </tr>
+            `;
+
+        });
+
+        html += "</table>";
+    }
+
+    document.getElementById(
+        "listaEstudiantes"
+    ).innerHTML=html;
 }
-
-
-lista.innerHTML=
-
-resultados.map(e=>`
-
-<div class="registro">
-
-<strong>
-${e.nombre} ${e.apellidos}
-</strong>
-
-<p>🪪 Identificación: ${e.identificacion}</p>
-
-<p>
-🎓 Grado:
-${e.grado}
-${e.grupo ? " - Grupo "+e.grupo : ""}
-</p>
-
-<button
-class="btn btn-danger"
-onclick="eliminarEstudiante(${e.id})">
-
-🗑️ Eliminar
-
-</button>
-
-</div>
-
-`).join("");
-
-}
-
 
 
 function eliminarEstudiante(id){
 
-if(
-!confirm("¿Eliminar este estudiante?")
-){
+    if(!confirm("¿Eliminar este estudiante?")) return;
 
-return;
+    let estudiantes=obtenerEstudiantes()
+    .filter(e=>e.id!==id);
 
+    localStorage.setItem(
+        "kankawarwa_estudiantes",
+        JSON.stringify(estudiantes)
+    );
+
+    listarEstudiantes();
 }
 
 
-let estudiantes=
-JSON.parse(
-localStorage.getItem("kankawarwa_estudiantes")
-) || [];
-
-
-estudiantes=
-estudiantes.filter(e=>e.id!==id);
-
-
-localStorage.setItem(
-
-"kankawarwa_estudiantes",
-
-JSON.stringify(estudiantes)
-
-);
-
-
-listarEstudiantes();
-
-}
-
-
-
-/* ==================================================
+/* ===========================
    DOCENTES
-================================================== */
+=========================== */
+
+function obtenerDocentes(){
+
+    let datos =
+        localStorage.getItem("kankawarwa_docentes");
+
+    return datos ? JSON.parse(datos) : [];
+}
+
 
 function guardarDocente(){
 
-const nombre=
-document.getElementById("dNombre").value.trim();
+    let docentes=obtenerDocentes();
 
-const apellidos=
-document.getElementById("dApellidos").value.trim();
+    let docente={
 
-const identificacion=
-document.getElementById("dId").value.trim();
+        id:Date.now(),
 
-const area=
-document.getElementById("dArea").value;
+        nombre:
+        document.getElementById("nombreDocente").value.trim(),
 
-const grado=
-document.getElementById("dGrado").value;
+        documento:
+        document.getElementById("documentoDocente").value.trim(),
 
+        area:
+        document.getElementById("areaDocente").value.trim()
 
-if(
-!nombre ||
-!apellidos ||
-!identificacion ||
-!area ||
-!grado
-){
+    };
 
-alert("Complete todos los datos.");
+    if(!docente.nombre){
 
-return;
+        alert("Escriba el nombre del docente.");
 
+        return;
+    }
+
+    docentes.push(docente);
+
+    localStorage.setItem(
+        "kankawarwa_docentes",
+        JSON.stringify(docentes)
+    );
+
+    document.getElementById("nombreDocente").value="";
+    document.getElementById("documentoDocente").value="";
+    document.getElementById("areaDocente").value="";
+
+    listarDocentes();
+
+    alert("Docente guardado.");
 }
-
-
-let docentes=
-JSON.parse(
-localStorage.getItem("kankawarwa_docentes")
-) || [];
-
-
-if(
-docentes.some(
-d=>d.identificacion===identificacion
-)
-){
-
-alert(
-"Ya existe un docente con esa identificación."
-);
-
-return;
-
-}
-
-
-docentes.push({
-
-id:Date.now(),
-
-nombre:nombre,
-
-apellidos:apellidos,
-
-identificacion:identificacion,
-
-area:area,
-
-grado:grado
-
-});
-
-
-localStorage.setItem(
-
-"kankawarwa_docentes",
-
-JSON.stringify(docentes)
-
-);
-
-
-alert("✅ Docente guardado.");
-
-
-document.getElementById("dNombre").value="";
-
-document.getElementById("dApellidos").value="";
-
-document.getElementById("dId").value="";
-
-document.getElementById("dArea").value="";
-
-document.getElementById("dGrado").value="";
-
-
-listarDocentes();
-
-}
-
 
 
 function listarDocentes(){
 
-let docentes=
-JSON.parse(
-localStorage.getItem("kankawarwa_docentes")
-) || [];
+    let docentes=obtenerDocentes();
 
+    let buscar=
+        document.getElementById("buscarDocente")
+        ?.value.toLowerCase() || "";
 
-const buscar=
-(
-document.getElementById("buscarDocente")?.value
-|| ""
-).toLowerCase();
+    docentes=docentes.filter(d =>
+        d.nombre.toLowerCase().includes(buscar)
+    );
 
+    let html="";
 
-const lista=
-document.getElementById("listaDocentes");
+    if(docentes.length===0){
 
+        html="<p>No hay docentes registrados.</p>";
 
-const resultados=
-docentes.filter(d=>
+    }else{
 
-`${d.nombre}
-${d.apellidos}
-${d.identificacion}
-${d.area}
-${d.grado}`
-.toLowerCase()
-.includes(buscar)
+        html += "<table>";
 
-);
+        html += `
+        <tr>
+        <th>Docente</th>
+        <th>Documento</th>
+        <th>Área</th>
+        <th>Acción</th>
+        </tr>
+        `;
 
+        docentes.forEach(d=>{
 
-if(resultados.length===0){
+            html += `
+            <tr>
 
-lista.innerHTML=
-"<p>No hay docentes registrados.</p>";
+            <td>${d.nombre}</td>
 
-return;
+            <td>${d.documento || ""}</td>
 
+            <td>${d.area || ""}</td>
+
+            <td>
+
+            <button
+            class="btn btn-rojo"
+            onclick="eliminarDocente(${d.id})">
+
+            Eliminar
+
+            </button>
+
+            </td>
+
+            </tr>
+            `;
+
+        });
+
+        html += "</table>";
+    }
+
+    document.getElementById(
+        "listaDocentes"
+    ).innerHTML=html;
 }
-
-
-lista.innerHTML=
-
-resultados.map(d=>`
-
-<div class="registro">
-
-<strong>
-${d.nombre} ${d.apellidos}
-</strong>
-
-<p>
-🪪 Identificación:
-${d.identificacion}
-</p>
-
-<p>
-📚 Área:
-${d.area}
-</p>
-
-<p>
-🎓 Grado:
-${d.grado}
-</p>
-
-<button
-class="btn btn-danger"
-onclick="eliminarDocente(${d.id})">
-
-🗑️ Eliminar
-
-</button>
-
-</div>
-
-`).join("");
-
-}
-
 
 
 function eliminarDocente(id){
 
-if(
-!confirm("¿Eliminar este docente?")
-){
+    if(!confirm("¿Eliminar este docente?")) return;
 
-return;
+    let docentes=obtenerDocentes()
+    .filter(d=>d.id!==id);
 
+    localStorage.setItem(
+        "kankawarwa_docentes",
+        JSON.stringify(docentes)
+    );
+
+    listarDocentes();
 }
 
 
-let docentes=
-JSON.parse(
-localStorage.getItem("kankawarwa_docentes")
-) || [];
-
-
-docentes=
-docentes.filter(d=>d.id!==id);
-
-
-localStorage.setItem(
-
-"kankawarwa_docentes",
-
-JSON.stringify(docentes)
-
-);
-
-
-listarDocentes();
-
-}
-
-
-
-/* ==================================================
+/* ===========================
    PLANES DE ÁREA
-================================================== */
+=========================== */
 
-function cargarDocentesPlan(){
+function obtenerPlanes(){
 
-const select=
-document.getElementById("pDocente");
+    let datos=
+        localStorage.getItem("kankawarwa_planes_pdf");
 
-
-let docentes=
-JSON.parse(
-localStorage.getItem("kankawarwa_docentes")
-) || [];
-
-
-select.innerHTML=
-'<option value="">Seleccione el docente</option>';
-
-
-docentes.forEach(function(d){
-
-const option=
-document.createElement("option");
-
-
-option.value=d.id;
-
-
-option.textContent=
-d.nombre+
-" "+
-d.apellidos+
-" - "+
-d.area;
-
-
-select.appendChild(option);
-
-});
-
+    return datos ? JSON.parse(datos) : [];
 }
 
 
+function guardarPlan(){
 
-/* MOSTRAR NOMBRE DEL PDF */
+    let archivo=
+        document.getElementById("pdfPlan").files[0];
 
-document
-.getElementById("pPdf")
-.addEventListener(
-"change",
-function(){
+    if(!archivo){
 
-const archivo=this.files[0];
+        alert("Seleccione un archivo PDF.");
 
-const texto=
-document.getElementById("nombrePdf");
+        return;
+    }
 
+    if(archivo.size > 5*1024*1024){
 
-if(archivo){
+        alert("El PDF no puede superar 5 MB.");
 
-texto.textContent=
-"📄 Archivo seleccionado: "+
-archivo.name;
+        return;
+    }
 
-}else{
+    let reader=new FileReader();
 
-texto.textContent=
-"No se ha seleccionado ningún PDF.";
+    reader.onload=function(e){
 
-}
+        let planes=obtenerPlanes();
 
-});
+        planes.push({
 
+            id:Date.now(),
 
+            area:
+            document.getElementById("areaPlan").value,
 
-/* GUARDAR PLAN */
+            grado:
+            document.getElementById("gradoPlan").value,
 
-function guardarPlanPDF(){
+            periodo:
+            document.getElementById("periodoPlan").value,
 
-const area=
-document.getElementById("pArea").value;
+            nombre:
+            document.getElementById("nombrePlan").value,
 
-const grado=
-document.getElementById("pGrado").value;
+            archivo:archivo.name,
 
-const periodo=
-document.getElementById("pPeriodo").value;
+            contenido:e.target.result
 
-const docenteId=
-document.getElementById("pDocente").value;
+        });
 
-const nombre=
-document.getElementById("pNombre").value.trim();
+        localStorage.setItem(
+            "kankawarwa_planes_pdf",
+            JSON.stringify(planes)
+        );
 
-const archivo=
-document.getElementById("pPdf").files[0];
+        listarPlanes();
 
+        alert("Plan guardado correctamente.");
+    };
 
-if(
-!area ||
-!grado ||
-!periodo ||
-!docenteId ||
-!nombre ||
-!archivo
-){
-
-alert(
-"Complete todos los campos y seleccione el PDF."
-);
-
-return;
-
+    reader.readAsDataURL(archivo);
 }
 
 
-if(
-archivo.type!=="application/pdf"
-){
+function listarPlanes(){
 
-alert(
-"El archivo seleccionado no es un PDF."
-);
+    let planes=obtenerPlanes();
 
-return;
+    let html="";
 
+    if(planes.length===0){
+
+        html="<p>No hay planes cargados.</p>";
+
+    }else{
+
+        planes.forEach(p=>{
+
+            html += `
+            <div class="card">
+
+            <strong>
+            ${p.area}
+            </strong>
+
+            <br>
+
+            Grado: ${p.grado}
+
+            <br>
+
+            Periodo: ${p.periodo}
+
+            <br>
+
+            ${p.archivo}
+
+            <br>
+
+            <button
+            class="btn btn-azul"
+            onclick="verPDF(${p.id})">
+
+            Ver PDF
+
+            </button>
+
+            <button
+            class="btn btn-rojo"
+            onclick="eliminarPlan(${p.id})">
+
+            Eliminar
+
+            </button>
+
+            </div>
+            `;
+
+        });
+    }
+
+    document.getElementById(
+        "listaPlanes"
+    ).innerHTML=html;
 }
 
-
-/* LÍMITE DE 5 MB */
-
-const limite=
-5*1024*1024;
-
-
-if(archivo.size>limite){
-
-alert(
-"El PDF supera el límite de 5 MB."
-);
-
-return;
-
-}
-
-
-const lector=
-new FileReader();
-
-
-lector.onload=function(e){
-
-
-let docentes=
-JSON.parse(
-localStorage.getItem("kankawarwa_docentes")
-) || [];
-
-
-const docente=
-docentes.find(
-d=>d.id==docenteId
-);
-
-
-let planes=
-JSON.parse(
-localStorage.getItem("kankawarwa_planes_pdf")
-) || [];
-
-
-planes.push({
-
-id:Date.now(),
-
-area:area,
-
-grado:grado,
-
-periodo:periodo,
-
-docenteId:docenteId,
-
-docente:
-
-docente
-?
-docente.nombre+
-" "+
-docente.apellidos
-:
-"",
-
-nombre:nombre,
-
-archivo:archivo.name,
-
-pdf:e.target.result
-
-});
-
-
-try{
-
-localStorage.setItem(
-
-"kankawarwa_planes_pdf",
-
-JSON.stringify(planes)
-
-);
-
-}catch(error){
-
-alert(
-"No hay suficiente espacio en el navegador para guardar este PDF."
-);
-
-return;
-
-}
-
-
-alert(
-"✅ Plan de área guardado correctamente."
-);
-
-
-document.getElementById("pArea").value="";
-
-document.getElementById("pGrado").value="";
-
-document.getElementById("pPeriodo").value="";
-
-document.getElementById("pDocente").value="";
-
-document.getElementById("pNombre").value="";
-
-document.getElementById("pPdf").value="";
-
-document.getElementById("nombrePdf").textContent=
-"No se ha seleccionado ningún PDF.";
-
-
-listarPlanesPDF();
-
-};
-
-
-lector.readAsDataURL(archivo);
-
-}
-
-
-
-/* LISTAR PLANES */
-
-function listarPlanesPDF(){
-
-let planes=
-JSON.parse(
-localStorage.getItem("kankawarwa_planes_pdf")
-) || [];
-
-
-const buscar=
-(
-document.getElementById("buscarPlan")?.value
-|| ""
-).toLowerCase();
-
-
-const lista=
-document.getElementById("listaPlanes");
-
-
-const resultados=
-planes.filter(p=>
-
-`${p.area}
-${p.grado}
-${p.periodo}
-${p.docente}
-${p.nombre}
-${p.archivo}`
-.toLowerCase()
-.includes(buscar)
-
-);
-
-
-if(resultados.length===0){
-
-lista.innerHTML=
-"<p>No hay planes de área registrados.</p>";
-
-return;
-
-}
-
-
-lista.innerHTML=
-
-resultados.map(p=>`
-
-<div class="registro">
-
-<strong>
-📚 ${p.nombre}
-</strong>
-
-<p>
-📖 Área:
-${p.area}
-</p>
-
-<p>
-🎓 Grado:
-${p.grado}
-</p>
-
-<p>
-📅 Período:
-${p.periodo}
-</p>
-
-<p>
-👨‍🏫 Docente:
-${p.docente}
-</p>
-
-<p>
-📄 Archivo:
-${p.archivo}
-</p>
-
-
-<div>
-
-<button
-class="btn btn-blue"
-onclick="verPDF(${p.id})">
-
-👁️ Ver PDF
-
-</button>
-
-
-<button
-class="btn btn-danger"
-onclick="eliminarPlanPDF(${p.id})">
-
-🗑️ Eliminar
-
-</button>
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-
-/* VER PDF */
 
 function verPDF(id){
 
-let planes=
-JSON.parse(
-localStorage.getItem("kankawarwa_planes_pdf")
-) || [];
+    let planes=obtenerPlanes();
 
+    let p=planes.find(x=>x.id===id);
 
-const plan=
-planes.find(
-p=>p.id===id
-);
+    if(!p)return;
 
+    let ventana=window.open();
 
-if(!plan){
-
-alert("No se encontró el PDF.");
-
-return;
-
+    ventana.document.write(`
+        <iframe
+        src="${p.contenido}"
+        style="width:100%;height:100vh;border:0">
+        </iframe>
+    `);
 }
 
 
-const ventana=
-window.open();
+function eliminarPlan(id){
 
+    if(!confirm("¿Eliminar este plan?")) return;
 
-if(!ventana){
+    let planes=
+        obtenerPlanes()
+        .filter(p=>p.id!==id);
 
-alert(
-"El navegador bloqueó la ventana del PDF."
-);
+    localStorage.setItem(
+        "kankawarwa_planes_pdf",
+        JSON.stringify(planes)
+    );
 
-return;
-
+    listarPlanes();
 }
 
 
-ventana.document.write(`
+/* ===========================
+   PLANTILLA WORD
+=========================== */
 
-<!DOCTYPE html>
+function descargarPlantilla(){
 
-<html>
+    let contenido=`
 
-<head>
+    <html>
 
-<title>
-${plan.nombre}
-</title>
+    <head>
 
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0">
+    <meta charset="UTF-8">
 
-</head>
+    </head>
 
-<body
-style="margin:0;background:#222;">
+    <body>
 
-<iframe
+    <h1>SIA KANKAWARWA</h1>
 
-src="${plan.pdf}"
+    <h2>PLANTILLA PARA BOLETINES</h2>
 
-style="
-width:100%;
-height:100vh;
-border:0;
-">
+    <p>
+    No cambie los nombres de las columnas.
+    Agregue una fila por cada área de cada estudiante.
+    </p>
 
-</iframe>
+    <table border="1">
 
-</body>
+    <tr>
 
-</html>
+    <th>ESTUDIANTE</th>
 
-`);
+    <th>GRADO</th>
 
+    <th>ÁREA</th>
 
-ventana.document.close();
+    <th>PERIODO</th>
 
-}
+    <th>NOTA</th>
 
+    <th>LOGRO</th>
 
+    <th>OBSERVACIÓN</th>
 
-/* ELIMINAR PLAN */
+    </tr>
 
-function eliminarPlanPDF(id){
+    <tr>
 
-if(
-!confirm(
-"¿Eliminar este plan de área y su PDF?"
-)
-){
+    <td>Juan Pérez</td>
 
-return;
+    <td>5°</td>
 
-}
+    <td>Matemáticas</td>
 
+    <td>1</td>
 
-let planes=
-JSON.parse(
-localStorage.getItem("kankawarwa_planes_pdf")
-) || [];
+    <td>4.5</td>
 
+    <td>Resuelve operaciones matemáticas.</td>
 
-planes=
-planes.filter(
-p=>p.id!==id
-);
+    <td>Buen desempeño.</td>
 
+    </tr>
 
-localStorage.setItem(
+    <tr>
 
-"kankawarwa_planes_pdf",
+    <td>Juan Pérez</td>
 
-JSON.stringify(planes)
+    <td>5°</td>
 
-);
+    <td>Ciencias Naturales</td>
 
+    <td>1</td>
 
-listarPlanesPDF();
+    <td>4.2</td>
 
-}
+    <td>Reconoce los componentes del ecosistema.</td>
 
-</script>
+    <td>Participa en clase.</td>
 
-</body>
+    </tr>
+
+    </table>
+
+    </body>
+
     </html>
+    `;
+
+    let blob=new Blob(
+        [contenido],
+        {type:"application/msword"}
+    );
+
+    let url=URL.createObjectURL(blob);
+
+    let a=document.createElement("a");
+
+    a.href=url;
+
+    a.download="Plantilla_Boletines_Kankawarwa.doc";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
+
+/* ===========================
+   PROCESAR WORD
+=========================== */
+
+async function procesarWord(){
+
+    let archivo=
+        document.getElementById("archivoWord")
+        .files[0];
+
+    if(!archivo){
+
+        alert("Seleccione primero un archivo Word.");
+
+        return;
+    }
+
+    if(
+        !archivo.name.toLowerCase().endsWith(".docx")
+    ){
+
+        alert("El archivo debe ser .docx");
+
+        return;
+    }
+
+    try{
+
+        let resultado=
+            await mammoth.convertToHtml({
+                arrayBuffer:
+                await archivo.arrayBuffer()
+            });
+
+        let html=resultado.value;
+
+        let temporal=document.createElement("div");
+
+        temporal.innerHTML=html;
+
+        let tablas=temporal.querySelectorAll("table");
+
+        if(tablas.length===0){
+
+            alert(
+                "No encontramos una tabla en el Word. Utilice la plantilla de SIA Kankawarwa."
+            );
+
+            return;
+        }
+
+        let tabla=tablas[0];
+
+        let filas=tabla.querySelectorAll("tr");
+
+        let datos=[];
+
+        filas.forEach((fila,index)=>{
+
+            if(index===0)return;
+
+            let celdas=fila.querySelectorAll("td,th");
+
+            if(celdas.length<7)return;
+
+            let filaDatos={
+
+                estudiante:celdas[0].innerText.trim(),
+
+                grado:celdas[1].innerText.trim(),
+
+                area:celdas[2].innerText.trim(),
+
+                periodo:celdas[3].innerText.trim(),
+
+                
