@@ -3,10 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SIA Kankawarwa</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
@@ -18,47 +22,41 @@ body{
 header{
     background:#174d35;
     color:white;
-    padding:18px;
     text-align:center;
+    padding:18px 10px;
 }
 
 header h1{
     margin:0;
-    font-size:25px;
+    font-size:26px;
 }
 
 header p{
     margin:6px 0 0;
-    font-size:14px;
 }
 
 nav{
     background:#123d2b;
+    padding:10px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:7px;
-    padding:10px;
 }
 
 nav button{
-    border:0;
     background:white;
     color:#174d35;
-    padding:11px 13px;
+    border:0;
     border-radius:7px;
+    padding:10px 13px;
     font-weight:bold;
-    cursor:pointer;
-}
-
-nav button:hover{
-    background:#dceee4;
 }
 
 main{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
-    padding:18px;
+    padding:15px;
 }
 
 .modulo{
@@ -71,72 +69,63 @@ main{
 
 .card{
     background:white;
-    border-radius:10px;
     padding:18px;
     margin-bottom:18px;
+    border-radius:10px;
     box-shadow:0 2px 8px #0002;
 }
 
-h2{
-    color:#174d35;
-    margin-top:0;
-}
-
-h3{
+h2,h3{
     color:#174d35;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
     width:100%;
     padding:10px;
-    margin:5px 0 10px;
-    border:1px solid #bbb;
+    margin:5px 0 12px;
+    border:1px solid #aaa;
     border-radius:6px;
     font-size:15px;
 }
 
 button{
-    border:0;
-    border-radius:6px;
-    padding:10px 14px;
     cursor:pointer;
-    font-weight:bold;
 }
 
 .btn{
     background:#174d35;
     color:white;
-}
-
-.btn-sec{
-    background:#777;
-    color:white;
-}
-
-.btn-danger{
-    background:#a92323;
-    color:white;
+    border:0;
+    padding:10px 14px;
+    border-radius:6px;
+    font-weight:bold;
 }
 
 .btn-blue{
     background:#245c91;
     color:white;
+    border:0;
+    padding:10px 14px;
+    border-radius:6px;
+    font-weight:bold;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:15px;
+.btn-danger{
+    background:#a92323;
+    color:white;
+    border:0;
+    padding:8px 11px;
+    border-radius:6px;
 }
 
-th,td{
-    border:1px solid #aaa;
-    padding:8px;
-    text-align:left;
-}
-
-th{
-    background:#e5eee8;
+.btn-gray{
+    background:#777;
+    color:white;
+    border:0;
+    padding:10px 14px;
+    border-radius:6px;
 }
 
 .info{
@@ -147,15 +136,15 @@ th{
 }
 
 .warning{
-    background:#fff4d6;
-    border-left:5px solid #d99b00;
+    background:#fff5d8;
+    border-left:5px solid #d49a00;
     padding:12px;
     margin:10px 0;
 }
 
 .success{
-    background:#e5f6e9;
-    border-left:5px solid #218739;
+    background:#e6f6ea;
+    border-left:5px solid #22833b;
     padding:12px;
     margin:10px 0;
 }
@@ -167,39 +156,56 @@ th{
     margin:10px 0;
 }
 
+.file-box{
+    border:2px dashed #174d35;
+    border-radius:9px;
+    padding:20px;
+    text-align:center;
+    margin:15px 0;
+}
+
 .modulos-inicio{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
     gap:15px;
 }
 
 .modulo-card{
     background:white;
-    padding:25px;
-    text-align:center;
+    padding:22px;
     border-radius:10px;
+    text-align:center;
     box-shadow:0 2px 7px #0002;
 }
 
 .modulo-card button{
     width:100%;
-    background:#174d35;
-    color:white;
 }
 
-.file-box{
-    border:2px dashed #174d35;
-    border-radius:8px;
-    padding:18px;
-    text-align:center;
-    margin:12px 0;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:12px;
+}
+
+th,td{
+    border:1px solid #999;
+    padding:7px;
+}
+
+th{
+    background:#e5eee8;
+}
+
+.tabla-scroll{
+    overflow-x:auto;
 }
 
 .boletin{
     background:white;
     padding:25px;
     margin:20px 0;
-    border:1px solid #aaa;
+    border:1px solid #888;
 }
 
 .boletin-header{
@@ -211,30 +217,39 @@ th{
 .boletin-datos{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:8px;
-    margin:15px 0;
+    gap:10px;
+    margin:18px 0;
 }
 
-.small{
-    font-size:13px;
-    color:#555;
+.centro{
+    text-align:center;
 }
 
 @media(max-width:600px){
-    main{padding:10px}
+
+    main{
+        padding:8px;
+    }
+
     .boletin-datos{
         grid-template-columns:1fr;
     }
+
     table{
         font-size:12px;
     }
+
     th,td{
         padding:5px;
     }
+
 }
 
 @media print{
-    nav,header,.no-print,.file-box,.card:not(.imprimir){
+
+    nav,
+    header,
+    .no-print{
         display:none!important;
     }
 
@@ -243,138 +258,270 @@ th{
     }
 
     main{
-        padding:0;
         max-width:none;
+        padding:0;
     }
 
     .boletin{
-        box-shadow:none;
         border:0;
         page-break-after:always;
     }
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>🏫 SIA KANKAWARWA</h1>
-    <p>Sistema de Información Académica</p>
+
+<h1>🏫 SIA KANKAWARWA</h1>
+
+<p>
+Sistema de Información Académica
+</p>
+
 </header>
 
+
 <nav>
-    <button onclick="mostrarModulo('inicio')">🏠 Inicio</button>
-    <button onclick="mostrarModulo('estudiantes')">👨‍🎓 Estudiantes</button>
-    <button onclick="mostrarModulo('docentes')">👨‍🏫 Docentes</button>
-    <button onclick="mostrarModulo('planes')">📚 Planes de área</button>
-    <button onclick="mostrarModulo('notas')">📝 Notas y logros</button>
-    <button onclick="mostrarModulo('boletines')">🧾 Boletines</button>
-    <button onclick="mostrarModulo('configuracion')">⚙️ Configuración</button>
+
+<button onclick="mostrarModulo('inicio')">
+🏠 Inicio
+</button>
+
+<button onclick="mostrarModulo('estudiantes')">
+👨‍🎓 Estudiantes
+</button>
+
+<button onclick="mostrarModulo('docentes')">
+👨‍🏫 Docentes
+</button>
+
+<button onclick="mostrarModulo('planes')">
+📚 Planes de área
+</button>
+
+<button onclick="mostrarModulo('notas')">
+📝 Notas
+</button>
+
+<button onclick="mostrarModulo('boletines')">
+🧾 Boletines
+</button>
+
+<button onclick="mostrarModulo('configuracion')">
+⚙️ Configuración
+</button>
+
 </nav>
+
 
 <main>
 
-<!-- INICIO -->
+
+<!-- ==================================================
+     INICIO
+================================================== -->
+
 <section id="inicio" class="modulo activo">
 
 <div class="card">
+
 <h2>Bienvenido a SIA Kankawarwa</h2>
+
 <p>
-Sistema de Información Académica de la Institución Educativa Indígena Kankawarwa.
+Sistema de Información Académica de la
+Institución Educativa Indígena Kankawarwa.
 </p>
+
 </div>
+
 
 <div class="modulos-inicio">
 
+
 <div class="modulo-card">
-<h3>👨‍🎓</h3>
+
+<h2>👨‍🎓</h2>
+
 <h3>Estudiantes</h3>
-<button onclick="mostrarModulo('estudiantes')">Entrar</button>
+
+<button class="btn"
+onclick="mostrarModulo('estudiantes')">
+
+Entrar
+
+</button>
+
 </div>
 
+
 <div class="modulo-card">
-<h3>👨‍🏫</h3>
+
+<h2>👨‍🏫</h2>
+
 <h3>Docentes</h3>
-<button onclick="mostrarModulo('docentes')">Entrar</button>
+
+<button class="btn"
+onclick="mostrarModulo('docentes')">
+
+Entrar
+
+</button>
+
 </div>
 
+
 <div class="modulo-card">
-<h3>📚</h3>
+
+<h2>📚</h2>
+
 <h3>Planes de área</h3>
-<button onclick="mostrarModulo('planes')">Entrar</button>
+
+<button class="btn"
+onclick="mostrarModulo('planes')">
+
+Entrar
+
+</button>
+
 </div>
 
-<div class="modulo-card">
-<h3>📝</h3>
-<h3>Notas y logros</h3>
-<button onclick="mostrarModulo('notas')">Entrar</button>
-</div>
 
 <div class="modulo-card">
-<h3>🧾</h3>
+
+<h2>📝</h2>
+
+<h3>Notas</h3>
+
+<button class="btn"
+onclick="mostrarModulo('notas')">
+
+Entrar
+
+</button>
+
+</div>
+
+
+<div class="modulo-card">
+
+<h2>🧾</h2>
+
 <h3>Boletines</h3>
-<button onclick="mostrarModulo('boletines')">Entrar</button>
-</div>
+
+<button class="btn"
+onclick="mostrarModulo('boletines')">
+
+Entrar
+
+</button>
 
 </div>
+
+
+</div>
+
 </section>
 
 
-<!-- ESTUDIANTES -->
+
+<!-- ==================================================
+     ESTUDIANTES
+================================================== -->
+
 <section id="estudiantes" class="modulo">
 
 <div class="card">
+
 <h2>👨‍🎓 Registro de estudiantes</h2>
 
+
 <label>Nombres</label>
-<input id="estNombres" type="text">
+
+<input id="estNombres">
+
 
 <label>Apellidos</label>
-<input id="estApellidos" type="text">
+
+<input id="estApellidos">
+
 
 <label>Documento / identificación</label>
-<input id="estDocumento" type="text">
+
+<input id="estDocumento">
+
 
 <label>Grado</label>
+
 <select id="estGrado">
+
 <option value="">Seleccione</option>
+
 <option>Preescolar</option>
 <option>1°</option>
 <option>2°</option>
 <option>3°</option>
 <option>4°</option>
 <option>5°</option>
+
 </select>
 
-<label>Grupo</label>
-<input id="estGrupo" type="text">
 
-<button class="btn" onclick="guardarEstudiante()">💾 Guardar estudiante</button>
+<label>Grupo</label>
+
+<input id="estGrupo">
+
+
+<button class="btn"
+onclick="guardarEstudiante()">
+
+💾 Guardar estudiante
+
+</button>
+
 </div>
 
+
 <div class="card">
+
 <h2>Estudiantes registrados</h2>
+
 <div id="listaEstudiantes"></div>
+
 </div>
 
 </section>
 
 
-<!-- DOCENTES -->
+
+<!-- ==================================================
+     DOCENTES
+================================================== -->
+
 <section id="docentes" class="modulo">
 
 <div class="card">
+
 <h2>👨‍🏫 Registro de docentes</h2>
 
+
 <label>Nombres</label>
+
 <input id="docNombres">
 
+
 <label>Apellidos</label>
+
 <input id="docApellidos">
 
+
 <label>Área</label>
+
 <select id="docArea">
+
 <option>Lengua Castellana</option>
 <option>Matemáticas</option>
 <option>Ciencias Naturales</option>
@@ -390,32 +537,54 @@ Sistema de Información Académica de la Institución Educativa Indígena Kankaw
 <option>Cultura y Tradición Arhuaca</option>
 <option>Territorio y Medio Ambiente</option>
 <option>Producción Agropecuaria</option>
+
 </select>
 
-<button class="btn" onclick="guardarDocente()">💾 Guardar docente</button>
+
+<button class="btn"
+onclick="guardarDocente()">
+
+💾 Guardar docente
+
+</button>
+
 </div>
 
+
 <div class="card">
+
 <h2>Docentes registrados</h2>
+
 <div id="listaDocentes"></div>
+
 </div>
 
 </section>
 
 
-<!-- PLANES -->
+
+<!-- ==================================================
+     PLANES DE ÁREA
+================================================== -->
+
 <section id="planes" class="modulo">
 
 <div class="card">
+
 <h2>📚 Planes de área</h2>
 
 <div class="info">
-Aquí puedes guardar los planes de área en formato PDF.
+
+Aquí se pueden guardar los planes de área
+en formato PDF.
+
 </div>
+
 
 <label>Área</label>
 
 <select id="planArea">
+
 <option>Lengua Castellana</option>
 <option>Matemáticas</option>
 <option>Ciencias Naturales</option>
@@ -431,68 +600,180 @@ Aquí puedes guardar los planes de área en formato PDF.
 <option>Cultura y Tradición Arhuaca</option>
 <option>Territorio y Medio Ambiente</option>
 <option>Producción Agropecuaria</option>
+
 </select>
 
+
 <div class="file-box">
-<p>📄 Seleccione el PDF del plan de área</p>
-<input type="file" id="planArchivo" accept=".pdf">
+
+<p>📄 Seleccione el PDF</p>
+
+<input
+type="file"
+id="planArchivo"
+accept=".pdf">
+
 </div>
 
-<button class="btn" onclick="guardarPlan()">💾 Guardar plan</button>
+
+<button class="btn"
+onclick="guardarPlan()">
+
+💾 Guardar plan
+
+</button>
+
 
 <div id="listaPlanes"></div>
 
 </div>
+
 </section>
 
 
-<!-- NOTAS -->
+
+<!-- ==================================================
+     NOTAS
+================================================== -->
+
 <section id="notas" class="modulo">
 
 <div class="card">
 
-<h2>📝 Cargar notas y logros desde Word</h2>
+<h2>📝 Carga de notas desde Word</h2>
+
 
 <div class="info">
-El archivo Word debe contener una tabla con estas columnas:
+
+<b>
+El profesor NO necesita escribir las notas dentro
+de SIA Kankawarwa.
+</b>
+
 <br><br>
-<b>ESTUDIANTE | GRADO | ÁREA | PERIODO | NOTA | LOGRO | OBSERVACIÓN</b>
+
+Debe subir un archivo Word
+<b>.DOCX</b> que ya tenga toda la información
+académica diligenciada.
+
 </div>
+
 
 <div class="warning">
-Por ahora se recomienda utilizar archivos <b>.DOCX</b>.
+
+<b>Formato recomendado de la tabla:</b>
+
+<br><br>
+
+ESTUDIANTE |
+GRADO |
+GRUPO |
+ÁREA |
+PERIODO |
+NOTA |
+LOGRO |
+OBSERVACIÓN
+
+<br><br>
+
+Ejemplo:
+
+<br><br>
+
+Juan Pérez |
+4° |
+A |
+Matemáticas |
+Primer periodo |
+4.5 |
+Resuelve operaciones |
+Excelente
+
 </div>
+
 
 <div class="file-box">
-<input type="file" id="archivoNotas" accept=".docx">
+
+<h3>📤 Word del profesor</h3>
+
+<input
+type="file"
+id="archivoNotasProfesor"
+accept=".docx">
+
+<br><br>
+
+<button
+class="btn"
+onclick="cargarNotasProfesor()">
+
+📥 CARGAR NOTAS
+
+</button>
+
 </div>
 
-<button class="btn" onclick="procesarWord()">📥 Procesar Word</button>
 
-<div id="resultadoWord"></div>
+<div id="resultadoCargaNotas"></div>
+
+
+<div class="card">
+
+<h3>📊 Resumen</h3>
+
+<div id="resumenNotas">
+
+Aún no se ha cargado ningún Word.
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<h3>📋 Datos académicos</h3>
+
+<div id="tablaNotasProfesor"></div>
+
+</div>
 
 </div>
 
 </section>
 
 
-<!-- BOLETINES -->
+
+<!-- ==================================================
+     BOLETINES
+================================================== -->
+
 <section id="boletines" class="modulo">
+
 
 <div class="card">
 
-<h2>🧾 GENERACIÓN DE BOLETINES</h2>
+<h2>🧾 BOLETINES</h2>
 
-<h3>1️⃣ Formato oficial del boletín</h3>
+
+<h3>1. 📋 Formato oficial</h3>
+
 
 <div class="info">
-Aquí podrás subir el formato oficial que utiliza la institución.
-Por ejemplo, el boletín que actualmente entrega Kankawarwa.
+
+Sube aquí el formato oficial del boletín
+que utiliza la institución.
+
+<br><br>
+
+Puede ser un archivo
+<b>Word (.DOCX)</b> o
+<b>PDF</b>.
+
 </div>
 
-<div class="file-box">
 
-<p>📋 Subir formato oficial</p>
+<div class="file-box">
 
 <input
 type="file"
@@ -501,100 +782,143 @@ accept=".docx,.pdf">
 
 <br><br>
 
-<button class="btn" onclick="guardarFormatoBoletin()">
-📤 Guardar formato oficial
+<button
+class="btn"
+onclick="guardarFormatoBoletin()">
+
+📤 GUARDAR FORMATO
+
 </button>
 
 </div>
+
 
 <div id="estadoFormato"></div>
 
 </div>
 
 
+
 <div class="card">
 
-<h3>2️⃣ Datos académicos</h3>
+<h3>2. 📊 Datos académicos</h3>
+
 
 <div class="info">
-Sube aquí el Word con las notas, logros y observaciones de los estudiantes.
+
+Aquí se utilizan las notas que cargó el profesor
+desde su archivo Word.
+
 </div>
 
-<div class="file-box">
 
-<input
-type="file"
-id="wordBoletin"
-accept=".docx">
+<button
+class="btn"
+onclick="mostrarModulo('notas')">
 
-<br><br>
+📝 Ir a cargar notas
 
-<button class="btn" onclick="procesarWordBoletin()">
-📊 Cargar datos académicos
 </button>
 
-</div>
 
 <div id="estadoDatosBoletin"></div>
 
 </div>
 
 
+
 <div class="card">
 
-<h3>3️⃣ Generar boletines</h3>
+<h3>3. 📅 Generar boletines</h3>
+
 
 <label>Periodo</label>
 
 <select id="periodoBoletin">
+
 <option>Primer periodo</option>
 <option>Segundo periodo</option>
 <option>Tercer periodo</option>
 <option>Cuarto periodo</option>
+
 </select>
+
 
 <br>
 
-<button class="btn" onclick="generarBoletines()">
+
+<button
+class="btn"
+onclick="generarBoletines()">
+
 🧾 GENERAR TODOS LOS BOLETINES
+
 </button>
 
-<button class="btn-blue" onclick="window.print()">
+
+<button
+class="btn-blue"
+onclick="window.print()">
+
 🖨️ IMPRIMIR
+
 </button>
+
 
 <div id="resultadoBoletines"></div>
 
 </div>
 
+
 </section>
 
 
-<!-- CONFIGURACION -->
+
+<!-- ==================================================
+     CONFIGURACIÓN
+================================================== -->
+
 <section id="configuracion" class="modulo">
 
 <div class="card">
 
 <h2>⚙️ Configuración institucional</h2>
 
+
 <label>Nombre de la institución</label>
-<input id="configInstitucion"
+
+<input
+id="configInstitucion"
 value="Institución Educativa Indígena Kankawarwa">
 
+
 <label>Nombre corto</label>
-<input id="configNombre"
+
+<input
+id="configNombre"
 value="Kankawarwa">
 
+
 <label>Municipio</label>
+
 <input id="configMunicipio">
 
+
 <label>Departamento</label>
-<input id="configDepartamento"
+
+<input
+id="configDepartamento"
 value="Magdalena">
 
-<button class="btn" onclick="guardarConfiguracion()">
+
+<button
+class="btn"
+onclick="guardarConfiguracion()">
+
 💾 Guardar configuración
+
 </button>
+
 
 <div id="mensajeConfiguracion"></div>
 
@@ -602,21 +926,34 @@ value="Magdalena">
 
 </section>
 
+
 </main>
+
 
 
 <script>
 
 /* =====================================================
-   CONFIGURACIÓN GENERAL
+   CLAVES DE ALMACENAMIENTO
 ===================================================== */
 
-const KEY_ESTUDIANTES = "kankawarwa_estudiantes";
-const KEY_DOCENTES = "kankawarwa_docentes";
-const KEY_PLANES = "kankawarwa_planes_pdf";
-const KEY_DATOS = "kankawarwa_datos_word";
-const KEY_FORMATO = "kankawarwa_formato_boletin";
-const KEY_CONFIG = "kankawarwa_configuracion";
+const KEY_ESTUDIANTES =
+"kankawarwa_estudiantes";
+
+const KEY_DOCENTES =
+"kankawarwa_docentes";
+
+const KEY_PLANES =
+"kankawarwa_planes_pdf";
+
+const KEY_DATOS =
+"kankawarwa_datos_word";
+
+const KEY_FORMATO =
+"kankawarwa_formato_boletin";
+
+const KEY_CONFIG =
+"kankawarwa_configuracion";
 
 
 /* =====================================================
@@ -625,18 +962,30 @@ const KEY_CONFIG = "kankawarwa_configuracion";
 
 function mostrarModulo(id){
 
-    document.querySelectorAll(".modulo").forEach(function(modulo){
-        modulo.classList.remove("activo");
+    document
+    .querySelectorAll(".modulo")
+    .forEach(function(m){
+
+        m.classList.remove("activo");
+
     });
 
-    const seleccionado = document.getElementById(id);
 
-    if(seleccionado){
-        seleccionado.classList.add("activo");
+    const modulo =
+    document.getElementById(id);
+
+
+    if(modulo){
+
+        modulo.classList.add("activo");
+
     }
 
+
     window.scrollTo(0,0);
+
 }
+
 
 
 /* =====================================================
@@ -645,145 +994,288 @@ function mostrarModulo(id){
 
 function obtenerEstudiantes(){
 
-    let datos = localStorage.getItem(KEY_ESTUDIANTES);
+    let datos =
+    localStorage.getItem(KEY_ESTUDIANTES);
+
 
     if(!datos){
 
-        const antiguos = localStorage.getItem("estudiantesKankawarwa");
+        const antiguos =
+        localStorage.getItem(
+            "estudiantesKankawarwa"
+        );
+
 
         if(antiguos){
-            localStorage.setItem(KEY_ESTUDIANTES, antiguos);
-            datos = antiguos;
+
+            localStorage.setItem(
+                KEY_ESTUDIANTES,
+                antiguos
+            );
+
+            datos=antiguos;
+
         }
+
     }
 
+
     try{
-        return datos ? JSON.parse(datos) : [];
+
+        return datos ?
+        JSON.parse(datos) :
+        [];
+
     }catch(e){
+
         return [];
+
     }
+
 }
 
 
 function guardarEstudiante(){
 
     const nombres =
-        document.getElementById("estNombres").value.trim();
+    document
+    .getElementById("estNombres")
+    .value
+    .trim();
+
 
     const apellidos =
-        document.getElementById("estApellidos").value.trim();
+    document
+    .getElementById("estApellidos")
+    .value
+    .trim();
+
 
     const documento =
-        document.getElementById("estDocumento").value.trim();
+    document
+    .getElementById("estDocumento")
+    .value
+    .trim();
+
 
     const grado =
-        document.getElementById("estGrado").value;
+    document
+    .getElementById("estGrado")
+    .value;
+
 
     const grupo =
-        document.getElementById("estGrupo").value.trim();
+    document
+    .getElementById("estGrupo")
+    .value
+    .trim();
+
 
     if(!nombres || !apellidos || !grado){
 
-        alert("Complete nombres, apellidos y grado.");
+        alert(
+            "Complete nombres, apellidos y grado."
+        );
+
         return;
+
     }
 
-    const estudiantes = obtenerEstudiantes();
+
+    const estudiantes =
+    obtenerEstudiantes();
+
 
     estudiantes.push({
+
         id:Date.now(),
+
         nombres,
+
         apellidos,
+
         documento,
+
         grado,
+
         grupo
+
     });
 
+
     localStorage.setItem(
+
         KEY_ESTUDIANTES,
+
         JSON.stringify(estudiantes)
+
     );
 
-    document.getElementById("estNombres").value="";
-    document.getElementById("estApellidos").value="";
-    document.getElementById("estDocumento").value="";
-    document.getElementById("estGrado").value="";
-    document.getElementById("estGrupo").value="";
+
+    document.getElementById(
+        "estNombres"
+    ).value="";
+
+
+    document.getElementById(
+        "estApellidos"
+    ).value="";
+
+
+    document.getElementById(
+        "estDocumento"
+    ).value="";
+
+
+    document.getElementById(
+        "estGrado"
+    ).value="";
+
+
+    document.getElementById(
+        "estGrupo"
+    ).value="";
+
 
     mostrarEstudiantes();
 
-    alert("Estudiante guardado correctamente.");
+
+    alert(
+        "Estudiante guardado correctamente."
+    );
+
 }
 
 
 function mostrarEstudiantes(){
 
-    const estudiantes = obtenerEstudiantes();
+    const estudiantes =
+    obtenerEstudiantes();
+
 
     const contenedor =
-        document.getElementById("listaEstudiantes");
+    document.getElementById(
+        "listaEstudiantes"
+    );
 
-    if(estudiantes.length===0){
+
+    if(!estudiantes.length){
 
         contenedor.innerHTML =
         "<p>No hay estudiantes registrados.</p>";
 
         return;
+
     }
 
-    let html = `
+
+    let html=`
+
+    <div class="tabla-scroll">
+
     <table>
+
     <tr>
+
     <th>Nombre</th>
     <th>Documento</th>
     <th>Grado</th>
     <th>Grupo</th>
     <th>Acción</th>
+
     </tr>
+
     `;
+
 
     estudiantes.forEach(function(e){
 
-        html += `
+        html+=`
+
         <tr>
-        <td>${escapeHTML(e.nombres)} ${escapeHTML(e.apellidos)}</td>
-        <td>${escapeHTML(e.documento || "")}</td>
-        <td>${escapeHTML(e.grado)}</td>
-        <td>${escapeHTML(e.grupo || "")}</td>
+
         <td>
-        <button class="btn-danger"
-        onclick="eliminarEstudiante(${e.id})">
-        Eliminar
-        </button>
+        ${escapeHTML(e.nombres)}
+        ${escapeHTML(e.apellidos)}
         </td>
+
+        <td>
+        ${escapeHTML(e.documento || "")}
+        </td>
+
+        <td>
+        ${escapeHTML(e.grado)}
+        </td>
+
+        <td>
+        ${escapeHTML(e.grupo || "")}
+        </td>
+
+        <td>
+
+        <button
+        class="btn-danger"
+        onclick="eliminarEstudiante(${e.id})">
+
+        Eliminar
+
+        </button>
+
+        </td>
+
         </tr>
+
         `;
+
     });
 
-    html += "</table>";
 
-    contenedor.innerHTML = html;
+    html+="</table></div>";
+
+
+    contenedor.innerHTML=html;
+
 }
 
 
 function eliminarEstudiante(id){
 
-    if(!confirm("¿Desea eliminar este estudiante?")) return;
+    if(
+        !confirm(
+            "¿Desea eliminar este estudiante?"
+        )
+    ){
 
-    let estudiantes = obtenerEstudiantes();
+        return;
+
+    }
+
+
+    let estudiantes =
+    obtenerEstudiantes();
+
 
     estudiantes =
-        estudiantes.filter(function(e){
-            return e.id !== id;
-        });
+    estudiantes.filter(function(e){
+
+        return e.id !== id;
+
+    });
+
 
     localStorage.setItem(
+
         KEY_ESTUDIANTES,
+
         JSON.stringify(estudiantes)
+
     );
 
+
     mostrarEstudiantes();
+
 }
+
 
 
 /* =====================================================
@@ -793,395 +1285,461 @@ function eliminarEstudiante(id){
 function obtenerDocentes(){
 
     try{
+
         return JSON.parse(
-            localStorage.getItem(KEY_DOCENTES)
+
+            localStorage.getItem(
+                KEY_DOCENTES
+            )
+
         ) || [];
+
     }catch(e){
+
         return [];
+
     }
+
 }
 
 
 function guardarDocente(){
 
     const nombres =
-        document.getElementById("docNombres").value.trim();
+    document
+    .getElementById("docNombres")
+    .value
+    .trim();
+
 
     const apellidos =
-        document.getElementById("docApellidos").value.trim();
+    document
+    .getElementById("docApellidos")
+    .value
+    .trim();
+
 
     const area =
-        document.getElementById("docArea").value;
+    document
+    .getElementById("docArea")
+    .value;
+
 
     if(!nombres || !apellidos){
 
-        alert("Complete nombres y apellidos.");
+        alert(
+            "Complete nombres y apellidos."
+        );
+
         return;
+
     }
 
-    const docentes = obtenerDocentes();
+
+    const docentes =
+    obtenerDocentes();
+
 
     docentes.push({
+
         id:Date.now(),
+
         nombres,
+
         apellidos,
+
         area
+
     });
 
+
     localStorage.setItem(
+
         KEY_DOCENTES,
+
         JSON.stringify(docentes)
+
     );
 
-    document.getElementById("docNombres").value="";
-    document.getElementById("docApellidos").value="";
+
+    document.getElementById(
+        "docNombres"
+    ).value="";
+
+
+    document.getElementById(
+        "docApellidos"
+    ).value="";
+
 
     mostrarDocentes();
 
-    alert("Docente guardado correctamente.");
+
+    alert(
+        "Docente guardado correctamente."
+    );
+
 }
 
 
 function mostrarDocentes(){
 
-    const docentes = obtenerDocentes();
+    const docentes =
+    obtenerDocentes();
+
 
     const contenedor =
-        document.getElementById("listaDocentes");
+    document.getElementById(
+        "listaDocentes"
+    );
 
-    if(docentes.length===0){
+
+    if(!docentes.length){
 
         contenedor.innerHTML =
         "<p>No hay docentes registrados.</p>";
 
         return;
+
     }
 
+
     let html=`
+
+    <div class="tabla-scroll">
+
     <table>
+
     <tr>
+
     <th>Docente</th>
     <th>Área</th>
     <th>Acción</th>
+
     </tr>
+
     `;
+
 
     docentes.forEach(function(d){
 
         html+=`
+
         <tr>
-        <td>${escapeHTML(d.nombres)} ${escapeHTML(d.apellidos)}</td>
-        <td>${escapeHTML(d.area)}</td>
+
         <td>
-        <button class="btn-danger"
-        onclick="eliminarDocente(${d.id})">
-        Eliminar
-        </button>
+        ${escapeHTML(d.nombres)}
+        ${escapeHTML(d.apellidos)}
         </td>
+
+        <td>
+        ${escapeHTML(d.area)}
+        </td>
+
+        <td>
+
+        <button
+        class="btn-danger"
+        onclick="eliminarDocente(${d.id})">
+
+        Eliminar
+
+        </button>
+
+        </td>
+
         </tr>
+
         `;
+
     });
 
-    html+="</table>";
+
+    html+="</table></div>";
+
 
     contenedor.innerHTML=html;
+
 }
 
 
 function eliminarDocente(id){
 
-    if(!confirm("¿Eliminar docente?")) return;
+    if(!confirm("¿Eliminar docente?")){
 
-    let docentes=obtenerDocentes();
+        return;
 
-    docentes=docentes.filter(function(d){
-        return d.id!==id;
+    }
+
+
+    let docentes =
+    obtenerDocentes();
+
+
+    docentes =
+    docentes.filter(function(d){
+
+        return d.id !== id;
+
     });
 
+
     localStorage.setItem(
+
         KEY_DOCENTES,
+
         JSON.stringify(docentes)
+
     );
 
+
     mostrarDocentes();
+
 }
 
 
+
 /* =====================================================
-   PLANES DE ÁREA
+   PLANES
 ===================================================== */
 
 function guardarPlan(){
 
     const area =
-        document.getElementById("planArea").value;
+    document.getElementById(
+        "planArea"
+    ).value;
+
 
     const archivo =
-        document.getElementById("planArchivo").files[0];
+    document.getElementById(
+        "planArchivo"
+    ).files[0];
+
 
     if(!archivo){
 
-        alert("Seleccione un archivo PDF.");
+        alert(
+            "Seleccione un archivo PDF."
+        );
+
         return;
+
     }
+
 
     if(archivo.size > 5*1024*1024){
 
-        alert("El PDF no puede superar 5 MB.");
+        alert(
+            "El PDF no puede superar 5 MB."
+        );
+
         return;
+
     }
 
-    const lector = new FileReader();
+
+    const lector =
+    new FileReader();
+
 
     lector.onload=function(){
 
         let planes=[];
 
+
         try{
+
             planes =
-            JSON.parse(localStorage.getItem(KEY_PLANES)) || [];
+            JSON.parse(
+                localStorage.getItem(
+                    KEY_PLANES
+                )
+            ) || [];
+
         }catch(e){
+
             planes=[];
+
         }
 
+
         planes.push({
+
             id:Date.now(),
+
             area,
+
             nombre:archivo.name,
+
             archivo:lector.result
+
         });
 
+
         localStorage.setItem(
+
             KEY_PLANES,
+
             JSON.stringify(planes)
+
         );
+
 
         mostrarPlanes();
 
-        alert("Plan de área guardado.");
+
+        alert(
+            "Plan de área guardado."
+        );
+
     };
 
+
     lector.readAsDataURL(archivo);
+
 }
 
 
 function mostrarPlanes(){
 
     const contenedor =
-        document.getElementById("listaPlanes");
+    document.getElementById(
+        "listaPlanes"
+    );
+
 
     let planes=[];
 
+
     try{
+
         planes =
-        JSON.parse(localStorage.getItem(KEY_PLANES)) || [];
+        JSON.parse(
+            localStorage.getItem(
+                KEY_PLANES
+            )
+        ) || [];
+
     }catch(e){
+
         planes=[];
+
     }
 
-    if(planes.length===0){
 
-        contenedor.innerHTML=
+    if(!planes.length){
+
+        contenedor.innerHTML =
         "<p>No hay planes guardados.</p>";
 
         return;
+
     }
 
+
     let html="<h3>Planes guardados</h3>";
+
 
     planes.forEach(function(p){
 
         html+=`
+
         <div class="info">
-        <b>${escapeHTML(p.area)}</b><br>
+
+        <b>
+        ${escapeHTML(p.area)}
+        </b>
+
+        <br>
+
         ${escapeHTML(p.nombre)}
+
         <br><br>
 
-        <a href="${p.archivo}"
+        <a
+        href="${p.archivo}"
         target="_blank">
+
         📄 Ver PDF
+
         </a>
 
         <br><br>
 
-        <button class="btn-danger"
+        <button
+        class="btn-danger"
         onclick="eliminarPlan(${p.id})">
+
         Eliminar
+
         </button>
 
         </div>
+
         `;
+
     });
 
+
     contenedor.innerHTML=html;
+
 }
 
 
 function eliminarPlan(id){
 
-    if(!confirm("¿Eliminar este plan?")) return;
+    if(!confirm("¿Eliminar este plan?")){
+
+        return;
+
+    }
+
 
     let planes=[];
 
+
     try{
+
         planes =
-        JSON.parse(localStorage.getItem(KEY_PLANES)) || [];
+        JSON.parse(
+            localStorage.getItem(
+                KEY_PLANES
+            )
+        ) || [];
+
     }catch(e){
+
         planes=[];
+
     }
 
-    planes=planes.filter(function(p){
-        return p.id!==id;
+
+    planes =
+    planes.filter(function(p){
+
+        return p.id !== id;
+
     });
 
+
     localStorage.setItem(
+
         KEY_PLANES,
+
         JSON.stringify(planes)
+
     );
 
+
     mostrarPlanes();
+
 }
+
 
 
 /* =====================================================
-   CARGA DE FORMATO OFICIAL DEL BOLETÍN
-===================================================== */
-
-function guardarFormatoBoletin(){
-
-    const archivo =
-        document.getElementById("formatoBoletin").files[0];
-
-    const estado =
-        document.getElementById("estadoFormato");
-
-    if(!archivo){
-
-        estado.innerHTML=
-        '<div class="error">Seleccione el formato oficial.</div>';
-
-        return;
-    }
-
-    if(archivo.size > 4*1024*1024){
-
-        estado.innerHTML=
-        '<div class="error">El archivo no puede superar 4 MB.</div>';
-
-        return;
-    }
-
-    const extension =
-        archivo.name.split(".").pop().toLowerCase();
-
-    if(extension!=="docx" && extension!=="pdf"){
-
-        estado.innerHTML=
-        '<div class="error">Utilice un archivo Word .DOCX o PDF.</div>';
-
-        return;
-    }
-
-    const lector=new FileReader();
-
-    lector.onload=function(){
-
-        const formato={
-            nombre:archivo.name,
-            extension:extension,
-            archivo:lector.result,
-            fecha:new Date().toLocaleString("es-CO")
-        };
-
-        try{
-
-            localStorage.setItem(
-                KEY_FORMATO,
-                JSON.stringify(formato)
-            );
-
-            mostrarFormatoGuardado();
-
-        }catch(e){
-
-            estado.innerHTML=`
-            <div class="error">
-            No fue posible guardar el formato.
-            El navegador puede haber alcanzado su límite de almacenamiento.
-            </div>`;
-        }
-    };
-
-    lector.readAsDataURL(archivo);
-}
-
-
-function mostrarFormatoGuardado(){
-
-    const estado =
-        document.getElementById("estadoFormato");
-
-    let formato=null;
-
-    try{
-        formato =
-        JSON.parse(localStorage.getItem(KEY_FORMATO));
-    }catch(e){
-        formato=null;
-    }
-
-    if(!formato){
-
-        estado.innerHTML=
-        '<div class="warning">Todavía no hay formato oficial cargado.</div>';
-
-        return;
-    }
-
-    estado.innerHTML=`
-    <div class="success">
-
-    <b>✅ Formato oficial guardado</b><br><br>
-
-    Archivo:
-    ${escapeHTML(formato.nombre)}
-    <br>
-
-    Fecha:
-    ${escapeHTML(formato.fecha)}
-
-    <br><br>
-
-    <a href="${formato.archivo}"
-       target="_blank">
-       📂 Abrir formato
-    </a>
-
-    <br><br>
-
-    <button class="btn-danger"
-    onclick="eliminarFormatoBoletin()">
-    🗑️ Eliminar formato
-    </button>
-
-    </div>
-    `;
-}
-
-
-function eliminarFormatoBoletin(){
-
-    if(!confirm("¿Eliminar el formato oficial guardado?"))
-        return;
-
-    localStorage.removeItem(KEY_FORMATO);
-
-    mostrarFormatoGuardado();
-}
-
-
-/* =====================================================
-   CARGA DE DATOS WORD
+   CARGAR MAMMOTH SOLO CUANDO SE NECESITA
 ===================================================== */
 
 function cargarMammoth(){
@@ -1191,454 +1749,1344 @@ function cargarMammoth(){
         if(window.mammoth){
 
             resolve();
+
             return;
+
         }
 
-        const script=document.createElement("script");
 
-        script.src=
+        const script =
+        document.createElement("script");
+
+
+        script.src =
         "https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js";
 
+
         script.onload=function(){
+
             resolve();
+
         };
+
 
         script.onerror=function(){
+
             reject(
-                new Error("No se pudo cargar el lector de Word.")
+                new Error(
+                    "No se pudo cargar el lector Word."
+                )
             );
+
         };
 
+
         document.head.appendChild(script);
+
     });
+
 }
 
+
+
+/* =====================================================
+   LEER WORD
+===================================================== */
 
 async function leerWord(archivo){
 
     await cargarMammoth();
 
+
     const buffer =
-        await archivo.arrayBuffer();
+    await archivo.arrayBuffer();
+
 
     const resultado =
-        await mammoth.convertToHtml({
-            arrayBuffer:buffer
-        });
+    await mammoth.convertToHtml({
+
+        arrayBuffer:buffer
+
+    });
+
 
     return resultado.value;
+
 }
 
 
-function extraerTablaHTML(html){
 
-    const temporal =
-        document.createElement("div");
+/* =====================================================
+   IDENTIFICAR COLUMNAS
+===================================================== */
 
-    temporal.innerHTML=html;
+function normalizar(texto){
+
+    return String(texto || "")
+
+    .toLowerCase()
+
+    .normalize("NFD")
+
+    .replace(/[\u0300-\u036f]/g,"")
+
+    .replace(/\s+/g," ")
+
+    .trim();
+
+}
+
+
+function identificarColumna(texto){
+
+    const h =
+    normalizar(texto);
+
+
+    if(
+        h.includes("estudiante") ||
+        h.includes("alumno") ||
+        h.includes("nombre")
+    ){
+
+        return "estudiante";
+
+    }
+
+
+    if(
+        h.includes("grado")
+    ){
+
+        return "grado";
+
+    }
+
+
+    if(
+        h.includes("grupo") ||
+        h.includes("curso")
+    ){
+
+        return "grupo";
+
+    }
+
+
+    if(
+        h.includes("area") ||
+        h.includes("asignatura") ||
+        h.includes("materia")
+    ){
+
+        return "area";
+
+    }
+
+
+    if(
+        h.includes("periodo") ||
+        h.includes("semestre")
+    ){
+
+        return "periodo";
+
+    }
+
+
+    if(
+        h.includes("nota") ||
+        h.includes("calificacion") ||
+        h.includes("valoracion")
+    ){
+
+        return "nota";
+
+    }
+
+
+    if(
+        h.includes("logro") ||
+        h.includes("desempeno")
+    ){
+
+        return "logro";
+
+    }
+
+
+    if(
+        h.includes("observacion") ||
+        h.includes("comentario")
+    ){
+
+        return "observacion";
+
+    }
+
+
+    return null;
+
+}
+
+
+
+/* =====================================================
+   EXTRAER INFORMACIÓN DEL WORD
+===================================================== */
+
+function extraerDatosWord(html){
+
+    const div =
+    document.createElement("div");
+
+
+    div.innerHTML=html;
+
 
     const tablas =
-        temporal.querySelectorAll("table");
+    div.querySelectorAll("table");
+
 
     let registros=[];
+
 
     tablas.forEach(function(tabla){
 
         const filas =
-            tabla.querySelectorAll("tr");
+        Array.from(
+            tabla.querySelectorAll("tr")
+        );
 
-        filas.forEach(function(fila,index){
 
-            const celdas =
-                fila.querySelectorAll("td,th");
+        if(filas.length < 2){
 
-            if(celdas.length<4) return;
+            return;
 
-            const valores =
-                Array.from(celdas).map(function(c){
-                    return c.innerText.trim();
-                });
+        }
 
-            if(index===0 &&
-               valores.join(" ").toUpperCase().includes("ESTUDIANTE")){
-                return;
+
+        const encabezados =
+        Array.from(
+            filas[0].querySelectorAll("th,td")
+        ).map(function(c){
+
+            return c.innerText.trim();
+
+        });
+
+
+        let mapa={};
+
+
+        encabezados.forEach(function(encabezado,index){
+
+            const columna =
+            identificarColumna(
+                encabezado
+            );
+
+
+            if(columna){
+
+                mapa[columna]=index;
+
             }
 
-            registros.push({
-                estudiante:valores[0] || "",
-                grado:valores[1] || "",
-                area:valores[2] || "",
-                periodo:valores[3] || "",
-                nota:valores[4] || "",
-                logro:valores[5] || "",
-                observacion:valores[6] || ""
-            });
         });
+
+
+        if(
+            mapa.estudiante === undefined ||
+            mapa.area === undefined
+        ){
+
+            return;
+
+        }
+
+
+        filas.slice(1).forEach(function(fila){
+
+            const celdas =
+            Array.from(
+                fila.querySelectorAll("td,th")
+            );
+
+
+            function obtener(campo){
+
+                if(
+                    mapa[campo] === undefined
+                ){
+
+                    return "";
+
+                }
+
+
+                const celda =
+                celdas[
+                    mapa[campo]
+                ];
+
+
+                return celda ?
+                celda.innerText.trim() :
+                "";
+
+            }
+
+
+            const estudiante =
+            obtener("estudiante");
+
+
+            const area =
+            obtener("area");
+
+
+            if(
+                !estudiante ||
+                !area
+            ){
+
+                return;
+
+            }
+
+
+            registros.push({
+
+                estudiante,
+
+                grado:
+                obtener("grado"),
+
+                grupo:
+                obtener("grupo"),
+
+                area,
+
+                periodo:
+                obtener("periodo"),
+
+                nota:
+                obtener("nota"),
+
+                logro:
+                obtener("logro"),
+
+                observacion:
+                obtener("observacion")
+
+            });
+
+        });
+
     });
 
+
     return registros;
+
 }
 
 
-async function procesarWord(){
+
+/* =====================================================
+   CARGAR NOTAS DEL PROFESOR
+===================================================== */
+
+async function cargarNotasProfesor(){
 
     const archivo =
-        document.getElementById("archivoNotas").files[0];
+    document.getElementById(
+        "archivoNotasProfesor"
+    ).files[0];
+
 
     const resultado =
-        document.getElementById("resultadoWord");
+    document.getElementById(
+        "resultadoCargaNotas"
+    );
+
 
     if(!archivo){
 
-        resultado.innerHTML=
-        '<div class="error">Seleccione un archivo Word.</div>';
+        resultado.innerHTML=`
+
+        <div class="error">
+
+        ❌ Seleccione primero el Word.
+
+        </div>
+
+        `;
 
         return;
+
     }
+
+
+    if(
+        !archivo.name
+        .toLowerCase()
+        .endsWith(".docx")
+    ){
+
+        resultado.innerHTML=`
+
+        <div class="error">
+
+        ❌ El archivo debe ser .DOCX.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
 
     try{
 
-        resultado.innerHTML=
-        '<div class="info">⏳ Procesando Word...</div>';
-
-        const html =
-            await leerWord(archivo);
-
-        const registros =
-            extraerTablaHTML(html);
-
-        if(registros.length===0){
-
-            resultado.innerHTML=`
-            <div class="warning">
-            No se encontraron datos en una tabla.
-            Revise que el Word tenga las columnas:
-            ESTUDIANTE, GRADO, ÁREA, PERIODO, NOTA, LOGRO y OBSERVACIÓN.
-            </div>`;
-
-            return;
-        }
-
-        localStorage.setItem(
-            KEY_DATOS,
-            JSON.stringify(registros)
-        );
-
         resultado.innerHTML=`
-        <div class="success">
-        ✅ Word procesado correctamente.
-        <br>
-        Registros encontrados: <b>${registros.length}</b>
+
+        <div class="info">
+
+        ⏳ Leyendo el Word del profesor...
+
+        <br><br>
+
+        Organizando automáticamente
+        estudiantes y notas.
+
         </div>
 
-        ${crearTablaDatos(registros)}
         `;
+
+
+        const html =
+        await leerWord(archivo);
+
+
+        const registros =
+        extraerDatosWord(html);
+
+
+        if(!registros.length){
+
+            resultado.innerHTML=`
+
+            <div class="error">
+
+            ❌ No se encontraron registros académicos.
+
+            <br><br>
+
+            Revise los encabezados de la tabla.
+
+            </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        localStorage.setItem(
+
+            KEY_DATOS,
+
+            JSON.stringify(registros)
+
+        );
+
+
+        mostrarResumenNotas(
+            registros
+        );
+
+
+        mostrarTablaNotas(
+            registros
+        );
+
+
+        resultado.innerHTML=`
+
+        <div class="success">
+
+        ✅ <b>Notas cargadas correctamente.</b>
+
+        <br><br>
+
+        SIA encontró
+        <b>${registros.length}</b>
+        registros académicos.
+
+        </div>
+
+        `;
+
 
     }catch(error){
 
         console.error(error);
 
+
         resultado.innerHTML=`
+
         <div class="error">
-        ❌ No fue posible procesar el Word.
+
+        ❌ No se pudo leer el archivo Word.
+
         <br><br>
-        Revise que sea un archivo .DOCX y que tenga una tabla académica.
+
+        Asegúrese de que sea un archivo
+        <b>.DOCX</b> con una tabla.
+
         </div>
+
         `;
+
     }
+
 }
 
 
-function crearTablaDatos(registros){
+
+/* =====================================================
+   RESUMEN DE NOTAS
+===================================================== */
+
+function mostrarResumenNotas(registros){
+
+    const estudiantes=[
+        ...new Set(
+            registros.map(
+                r=>r.estudiante
+            )
+        )
+    ];
+
+
+    const areas=[
+        ...new Set(
+            registros.map(
+                r=>r.area
+            )
+        )
+    ];
+
+
+    const periodos=[
+        ...new Set(
+            registros
+            .map(r=>r.periodo)
+            .filter(Boolean)
+        )
+    ];
+
+
+    document.getElementById(
+        "resumenNotas"
+    ).innerHTML=`
+
+    <table>
+
+    <tr>
+    <th>Información</th>
+    <th>Cantidad</th>
+    </tr>
+
+    <tr>
+    <td>👨‍🎓 Estudiantes</td>
+    <td>${estudiantes.length}</td>
+    </tr>
+
+    <tr>
+    <td>📚 Áreas</td>
+    <td>${areas.length}</td>
+    </tr>
+
+    <tr>
+    <td>📝 Registros</td>
+    <td>${registros.length}</td>
+    </tr>
+
+    <tr>
+    <td>📅 Periodos</td>
+    <td>${periodos.length}</td>
+    </tr>
+
+    </table>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   TABLA DE NOTAS
+===================================================== */
+
+function mostrarTablaNotas(registros){
+
+    const contenedor =
+    document.getElementById(
+        "tablaNotasProfesor"
+    );
+
 
     let html=`
+
+    <div class="tabla-scroll">
+
     <table>
+
     <tr>
+
     <th>Estudiante</th>
     <th>Grado</th>
+    <th>Grupo</th>
     <th>Área</th>
     <th>Periodo</th>
     <th>Nota</th>
+    <th>Logro</th>
+    <th>Observación</th>
+
     </tr>
+
     `;
+
 
     registros.forEach(function(r){
 
         html+=`
+
         <tr>
-        <td>${escapeHTML(r.estudiante)}</td>
-        <td>${escapeHTML(r.grado)}</td>
-        <td>${escapeHTML(r.area)}</td>
-        <td>${escapeHTML(r.periodo)}</td>
-        <td>${escapeHTML(r.nota)}</td>
+
+        <td>
+        ${escapeHTML(r.estudiante)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.grado)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.grupo)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.area)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.periodo)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.nota)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.logro)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.observacion)}
+        </td>
+
         </tr>
+
         `;
+
     });
 
-    html+="</table>";
 
-    return html;
+    html+="</table></div>";
+
+
+    contenedor.innerHTML=html;
+
 }
 
 
+
 /* =====================================================
-   DATOS PARA BOLETINES
+   FORMATO OFICIAL DEL BOLETÍN
 ===================================================== */
 
-async function procesarWordBoletin(){
+function guardarFormatoBoletin(){
 
     const archivo =
-        document.getElementById("wordBoletin").files[0];
+    document.getElementById(
+        "formatoBoletin"
+    ).files[0];
+
 
     const estado =
-        document.getElementById("estadoDatosBoletin");
+    document.getElementById(
+        "estadoFormato"
+    );
+
 
     if(!archivo){
 
-        estado.innerHTML=
-        '<div class="error">Seleccione el Word de notas.</div>';
-
-        return;
-    }
-
-    try{
-
-        estado.innerHTML=
-        '<div class="info">⏳ Procesando información académica...</div>';
-
-        const html =
-            await leerWord(archivo);
-
-        const registros =
-            extraerTablaHTML(html);
-
-        if(!registros.length){
-
-            estado.innerHTML=
-            '<div class="error">No se encontraron registros académicos.</div>';
-
-            return;
-        }
-
-        localStorage.setItem(
-            KEY_DATOS,
-            JSON.stringify(registros)
-        );
-
         estado.innerHTML=`
-        <div class="success">
-        ✅ Datos académicos cargados.
-        <br>
-        ${registros.length} registros encontrados.
+
+        <div class="error">
+
+        ❌ Seleccione el formato oficial.
+
         </div>
+
         `;
 
-    }catch(e){
+        return;
 
-        console.error(e);
-
-        estado.innerHTML=
-        '<div class="error">No se pudo leer el Word.</div>';
     }
+
+
+    if(archivo.size > 4*1024*1024){
+
+        estado.innerHTML=`
+
+        <div class="error">
+
+        ❌ El archivo no puede superar 4 MB.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const extension =
+    archivo.name
+    .split(".")
+    .pop()
+    .toLowerCase();
+
+
+    if(
+        extension !== "docx" &&
+        extension !== "pdf"
+    ){
+
+        estado.innerHTML=`
+
+        <div class="error">
+
+        ❌ Utilice Word .DOCX o PDF.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    const lector =
+    new FileReader();
+
+
+    lector.onload=function(){
+
+        try{
+
+            localStorage.setItem(
+
+                KEY_FORMATO,
+
+                JSON.stringify({
+
+                    nombre:archivo.name,
+
+                    extension,
+
+                    archivo:lector.result,
+
+                    fecha:
+                    new Date()
+                    .toLocaleString("es-CO")
+
+                })
+
+            );
+
+
+            mostrarFormato();
+
+
+        }catch(error){
+
+            estado.innerHTML=`
+
+            <div class="error">
+
+            ❌ No hay suficiente espacio
+            en el almacenamiento del navegador.
+
+            </div>
+
+            `;
+
+        }
+
+    };
+
+
+    lector.readAsDataURL(archivo);
+
 }
 
 
+function mostrarFormato(){
+
+    const estado =
+    document.getElementById(
+        "estadoFormato"
+    );
+
+
+    let formato=null;
+
+
+    try{
+
+        formato =
+        JSON.parse(
+            localStorage.getItem(
+                KEY_FORMATO
+            )
+        );
+
+    }catch(e){
+
+        formato=null;
+
+    }
+
+
+    if(!formato){
+
+        estado.innerHTML=`
+
+        <div class="warning">
+
+        Todavía no se ha cargado
+        el formato oficial.
+
+        </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    estado.innerHTML=`
+
+    <div class="success">
+
+    ✅ <b>Formato oficial guardado.</b>
+
+    <br><br>
+
+    Archivo:
+    ${escapeHTML(formato.nombre)}
+
+    <br>
+
+    Fecha:
+    ${escapeHTML(formato.fecha)}
+
+    <br><br>
+
+    <a
+    href="${formato.archivo}"
+    target="_blank">
+
+    📂 Abrir formato
+
+    </a>
+
+    <br><br>
+
+    <button
+    class="btn-danger"
+    onclick="eliminarFormato()">
+
+    🗑️ Eliminar formato
+
+    </button>
+
+    </div>
+
+    `;
+
+}
+
+
+function eliminarFormato(){
+
+    if(
+        !confirm(
+            "¿Eliminar el formato oficial?"
+        )
+    ){
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+        KEY_FORMATO
+    );
+
+
+    mostrarFormato();
+
+}
+
+
+
 /* =====================================================
-   GENERAR BOLETINES
+   GENERACIÓN DE BOLETINES
 ===================================================== */
 
-function obtenerDatos(){
+function obtenerDatosAcademicos(){
 
     try{
 
         return JSON.parse(
-            localStorage.getItem(KEY_DATOS)
+
+            localStorage.getItem(
+                KEY_DATOS
+            )
+
         ) || [];
 
     }catch(e){
 
         return [];
+
     }
+
+}
+
+
+function periodoCoincide(
+    periodoDato,
+    periodoSeleccionado
+){
+
+    if(!periodoDato){
+
+        return true;
+
+    }
+
+
+    const a =
+    normalizar(periodoDato);
+
+
+    const b =
+    normalizar(periodoSeleccionado);
+
+
+    if(a===b){
+
+        return true;
+
+    }
+
+
+    if(
+        a.includes("primer") &&
+        b.includes("primer")
+    ){
+
+        return true;
+
+    }
+
+
+    if(
+        a.includes("segundo") &&
+        b.includes("segundo")
+    ){
+
+        return true;
+
+    }
+
+
+    if(
+        a.includes("tercer") &&
+        b.includes("tercer")
+    ){
+
+        return true;
+
+    }
+
+
+    if(
+        a.includes("cuarto") &&
+        b.includes("cuarto")
+    ){
+
+        return true;
+
+    }
+
+
+    return false;
+
 }
 
 
 function generarBoletines(){
 
     const datos =
-        obtenerDatos();
+    obtenerDatosAcademicos();
+
 
     const periodo =
-        document.getElementById("periodoBoletin").value;
+    document.getElementById(
+        "periodoBoletin"
+    ).value;
+
 
     const contenedor =
-        document.getElementById("resultadoBoletines");
+    document.getElementById(
+        "resultadoBoletines"
+    );
+
 
     if(!datos.length){
 
-        contenedor.innerHTML=
-        '<div class="warning">Primero cargue el Word con las notas.</div>';
+        contenedor.innerHTML=`
+
+        <div class="warning">
+
+        ⚠️ Primero cargue el Word del profesor
+        desde el módulo Notas.
+
+        </div>
+
+        `;
 
         return;
+
     }
 
-    const filtrados =
-        datos.filter(function(d){
 
-            if(!d.periodo) return true;
+    let registros =
+    datos.filter(function(r){
 
-            return normalizar(d.periodo)
-                === normalizar(periodo)
-                ||
-                normalizar(d.periodo)
-                .includes(normalizar(periodo).replace("periodo","").trim());
+        return periodoCoincide(
+            r.periodo,
+            periodo
+        );
 
-        });
-
-    const estudiantes={};
-
-    filtrados.forEach(function(d){
-
-        const nombre=d.estudiante.trim();
-
-        if(!nombre) return;
-
-        if(!estudiantes[nombre]){
-            estudiantes[nombre]=[];
-        }
-
-        estudiantes[nombre].push(d);
     });
 
+
+    if(!registros.length){
+
+        registros=datos;
+
+    }
+
+
+    const grupos={};
+
+
+    registros.forEach(function(r){
+
+        const nombre =
+        r.estudiante.trim();
+
+
+        if(!nombre){
+
+            return;
+
+        }
+
+
+        if(!grupos[nombre]){
+
+            grupos[nombre]=[];
+
+        }
+
+
+        grupos[nombre].push(r);
+
+    });
+
+
     const nombres =
-        Object.keys(estudiantes);
+    Object.keys(grupos);
+
 
     if(!nombres.length){
 
-        contenedor.innerHTML=
-        '<div class="warning">No hay estudiantes para el periodo seleccionado.</div>';
+        contenedor.innerHTML=`
+
+        <div class="warning">
+
+        No hay estudiantes para generar.
+
+        </div>
+
+        `;
 
         return;
+
     }
+
 
     let html="";
 
+
     nombres.forEach(function(nombre){
 
-        const registros =
-            estudiantes[nombre];
+        const registrosEstudiante =
+        grupos[nombre];
+
 
         const primero =
-            registros[0];
+        registrosEstudiante[0];
 
-        html+=crearBoletin(
+
+        html += crearBoletin(
+
             nombre,
+
             primero.grado,
-            registros,
+
+            primero.grupo,
+
+            registrosEstudiante,
+
             periodo
+
         );
+
     });
 
-    contenedor.innerHTML=html;
+
+    contenedor.innerHTML=`
+
+    <div class="success no-print">
+
+    ✅ Se generaron
+    <b>${nombres.length}</b>
+    boletines.
+
+    <br><br>
+
+    Pulse <b>IMPRIMIR</b> para imprimirlos.
+
+    </div>
+
+    ${html}
+
+    `;
+
 }
 
+
+
+/* =====================================================
+   CREAR BOLETÍN
+===================================================== */
 
 function crearBoletin(
     nombre,
     grado,
+    grupo,
     registros,
     periodo
 ){
 
     let filas="";
 
+
     registros.forEach(function(r){
 
         filas+=`
+
         <tr>
-        <td>${escapeHTML(r.area)}</td>
-        <td>${escapeHTML(r.nota)}</td>
-        <td>${escapeHTML(r.logro)}</td>
-        <td>${escapeHTML(r.observacion)}</td>
+
+        <td>
+        ${escapeHTML(r.area)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.nota)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.logro)}
+        </td>
+
+        <td>
+        ${escapeHTML(r.observacion)}
+        </td>
+
         </tr>
+
         `;
+
     });
 
+
     return `
-    <div class="boletin imprimir">
+
+    <div class="boletin">
 
     <div class="boletin-header">
 
-    <h2>INSTITUCIÓN EDUCATIVA INDÍGENA KANKAWARWA</h2>
+    <h2>
+    INSTITUCIÓN EDUCATIVA INDÍGENA KANKAWARWA
+    </h2>
 
     <p>
     Sistema de Información Académica
     </p>
 
-    <h3>BOLETÍN ACADÉMICO</h3>
+    <h3>
+    BOLETÍN ACADÉMICO
+    </h3>
 
     </div>
+
 
     <div class="boletin-datos">
 
     <div>
-    <b>Estudiante:</b><br>
+
+    <b>Estudiante</b>
+
+    <br>
+
     ${escapeHTML(nombre)}
+
     </div>
 
+
     <div>
-    <b>Grado:</b><br>
+
+    <b>Grado</b>
+
+    <br>
+
     ${escapeHTML(grado)}
+
     </div>
 
+
     <div>
-    <b>Periodo:</b><br>
+
+    <b>Grupo</b>
+
+    <br>
+
+    ${escapeHTML(grupo)}
+
+    </div>
+
+
+    <div>
+
+    <b>Periodo</b>
+
+    <br>
+
     ${escapeHTML(periodo)}
-    </div>
 
-    <div>
-    <b>Institución:</b><br>
-    Kankawarwa
     </div>
 
     </div>
+
 
     <table>
 
     <tr>
+
     <th>Área</th>
+
     <th>Nota</th>
+
     <th>Logro</th>
+
     <th>Observación</th>
+
     </tr>
 
     ${filas}
 
     </table>
 
+
     <br><br>
+
 
     <table>
 
     <tr>
-    <td>
+
+    <td class="centro">
+
     <b>Firma del docente</b>
+
+    <br><br><br>
+
+    __________________________
+
     </td>
 
-    <td>
+
+    <td class="centro">
+
     <b>Firma del acudiente</b>
-    </td>
-    </tr>
 
-    <tr>
-    <td style="height:70px"></td>
-    <td></td>
+    <br><br><br>
+
+    __________________________
+
+    </td>
+
     </tr>
 
     </table>
 
+
     </div>
+
     `;
+
 }
+
 
 
 /* =====================================================
@@ -1650,28 +3098,51 @@ function guardarConfiguracion(){
     const configuracion={
 
         institucion:
-        document.getElementById("configInstitucion").value,
+        document.getElementById(
+            "configInstitucion"
+        ).value,
 
         nombre:
-        document.getElementById("configNombre").value,
+        document.getElementById(
+            "configNombre"
+        ).value,
 
         municipio:
-        document.getElementById("configMunicipio").value,
+        document.getElementById(
+            "configMunicipio"
+        ).value,
 
         departamento:
-        document.getElementById("configDepartamento").value
+        document.getElementById(
+            "configDepartamento"
+        ).value
 
     };
 
+
     localStorage.setItem(
+
         KEY_CONFIG,
-        JSON.stringify(configuracion)
+
+        JSON.stringify(
+            configuracion
+        )
+
     );
+
 
     document.getElementById(
         "mensajeConfiguracion"
-    ).innerHTML=
-    '<div class="success">Configuración guardada.</div>';
+    ).innerHTML=`
+
+    <div class="success">
+
+    ✅ Configuración guardada.
+
+    </div>
+
+    `;
+
 }
 
 
@@ -1681,65 +3152,102 @@ function cargarConfiguracion(){
 
         const c =
         JSON.parse(
-            localStorage.getItem(KEY_CONFIG)
+            localStorage.getItem(
+                KEY_CONFIG
+            )
         );
 
-        if(!c) return;
 
-        if(c.institucion)
-            document.getElementById("configInstitucion").value=c.institucion;
+        if(!c){
 
-        if(c.nombre)
-            document.getElementById("configNombre").value=c.nombre;
+            return;
 
-        if(c.municipio)
-            document.getElementById("configMunicipio").value=c.municipio;
+        }
 
-        if(c.departamento)
-            document.getElementById("configDepartamento").value=c.departamento;
+
+        if(c.institucion){
+
+            document.getElementById(
+                "configInstitucion"
+            ).value=c.institucion;
+
+        }
+
+
+        if(c.nombre){
+
+            document.getElementById(
+                "configNombre"
+            ).value=c.nombre;
+
+        }
+
+
+        if(c.municipio){
+
+            document.getElementById(
+                "configMunicipio"
+            ).value=c.municipio;
+
+        }
+
+
+        if(c.departamento){
+
+            document.getElementById(
+                "configDepartamento"
+            ).value=c.departamento;
+
+        }
 
     }catch(e){}
+
 }
 
 
+
 /* =====================================================
-   SEGURIDAD
+   SEGURIDAD HTML
 ===================================================== */
 
 function escapeHTML(text){
 
     return String(text ?? "")
+
     .replace(/&/g,"&amp;")
+
     .replace(/</g,"&lt;")
+
     .replace(/>/g,"&gt;")
+
     .replace(/"/g,"&quot;")
+
     .replace(/'/g,"&#039;");
+
 }
 
-
-function normalizar(texto){
-
-    return String(texto || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g,"")
-    .trim();
-}
 
 
 /* =====================================================
    INICIO
 ===================================================== */
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    mostrarEstudiantes();
-    mostrarDocentes();
-    mostrarPlanes();
-    mostrarFormatoGuardado();
-    cargarConfiguracion();
+        mostrarEstudiantes();
 
-});
+        mostrarDocentes();
+
+        mostrarPlanes();
+
+        mostrarFormato();
+
+        cargarConfiguracion();
+
+    }
+);
 
 </script>
 
